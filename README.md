@@ -4,18 +4,18 @@ This repository will contains my best projects and exercises made during my Grad
 
 ## First Year
 
-+ LI1 - Laboratório de Informática 1
-+ LI2 - Laboratório de Informática 2
-+ PF - Programação Funcional
-+ PI - Programação Imperativa
++ [LI1](https://github.com/VitorLelis/uminho-lei/tree/main/year_1/li1) - Laboratório de Informática 1
++ [LI2](https://github.com/VitorLelis/uminho-lei/tree/main/year_1/li2) - Laboratório de Informática 2
++ [PF](https://github.com/VitorLelis/uminho-lei/tree/main/year_1/pf) - Programação Funcional
++ [PI](https://github.com/VitorLelis/uminho-lei/tree/main/year_1/pi) - Programação Imperativa
 
 ## Second Year
 
-+ POO - Programação Orientada a Objetos
++ [POO](https://github.com/VitorLelis/uminho-lei/tree/main/year_2/poo) - Programação Orientada a Objetos
 
 ## Third Year
 
-+ CP - Cálculo de Programas
++ [CP](https://github.com/VitorLelis/uminho-lei/tree/main/year_3/cp) - Cálculo de Programas
 
 <sub>2019 - PRESENT</sub>
 
