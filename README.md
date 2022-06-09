@@ -12,7 +12,6 @@ This repository will contains my best projects and exercises made during my Grad
 ## Second Year
 
 + [POO](https://github.com/VitorLelis/uminho-lei/tree/main/year_2/poo) - Programação Orientada a Objetos
-
 + [SO](https://github.com/VitorLelis/uminho-lei/tree/main/year_2/so) - Sistemas Operativos
 
 ## Third Year
