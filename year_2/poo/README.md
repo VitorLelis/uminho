@@ -2,7 +2,7 @@
 
 Projeto realizado no âmbito da cadeira de **Programação Orientada a Objetos** no ano letivo de 2020/2021. Consiste em uma replicação do jogo _Football Manager_
 
-Grupo formado:
+Feito usando _Java_ como linguagem. Grupo formado:
 
 + Pedro Aquino Martins de Araujo - A90614
 

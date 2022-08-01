@@ -4,7 +4,7 @@ Projeto realizado no âmbito da cadeira de **Cálculo de Programas** no ano leti
 
 Foi feito usando _Literate Haskell_ para facilitar a conversão para LaTeX das resoluções.
 
-Grupo 1: 
+Grupo 01: 
 
 + Pedro Aquino Martins de Araujo - A90614
 
