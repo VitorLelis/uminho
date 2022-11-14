@@ -1,6 +1,6 @@
 # University Graduation Projects
 
-This repository will contains my best projects and exercises made during my Graduation in Software Engineering at University of Minho. Disclaimer: Most of the descriptions of projects and exercises were written in Portuguese.
+This repository will contains my favorite projects and exercises made during my Graduation in Software Engineering at University of Minho. Disclaimer: Most of the descriptions of projects and exercises were written in Portuguese.
 
 ## First Year
 
