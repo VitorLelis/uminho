@@ -18,6 +18,7 @@ This repository will contains my favorite projects and exercises made during my 
 ## Third Year
 
 + [CP](https://github.com/VitorLelis/uminho-lei/tree/main/year_3/cp) - Cálculo de Programas
++ [IA](https://github.com/VitorLelis/uminho-lei/tree/main/year_3/ia) - Inteligência Aritifical
 
 <sub>2019 - PRESENT</sub>
 
