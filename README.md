@@ -19,7 +19,8 @@ This repository will contains my favorite projects and exercises made during my 
 
 + [CP](https://github.com/VitorLelis/uminho-lei/tree/main/year_3/cp) - Cálculo de Programas
 + [IA](https://github.com/VitorLelis/uminho-lei/tree/main/year_3/ia) - Inteligência Aritifical
++ [PL](https://github.com/VitorLelis/uminho-lei/tree/main/year_3/pl) - Processamento de Linguagens
 
-<sub>2019 - PRESENT</sub>
+<sub>2019 - 2023</sub>
 
 <img src="https://www.eng.uminho.pt/SiteAssets/Logo.PNG" alt="University of Minho">

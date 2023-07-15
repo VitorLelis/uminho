@@ -1,0 +1,1026 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> root
+Rule 1     root -> toml
+Rule 2     toml -> table
+Rule 3     toml -> arraytable
+Rule 4     toml -> empty
+Rule 5     toml -> toml attributes
+Rule 6     toml -> toml table
+Rule 7     toml -> toml arraytable
+Rule 8     table -> header attributes
+Rule 9     arraytable -> [ header ] attributes
+Rule 10    table -> header empty
+Rule 11    arraytable -> [ header ] empty
+Rule 12    attributes -> attributes attribute
+Rule 13    attributes -> attribute
+Rule 14    attribute -> key = value
+Rule 15    key -> key . simplekey
+Rule 16    key -> simplekey
+Rule 17    simplekey -> WORD
+Rule 18    simplekey -> STRING
+Rule 19    header -> [ key ]
+Rule 20    value -> term
+Rule 21    value -> array
+Rule 22    value -> inlinetable
+Rule 23    term -> INT
+Rule 24    term -> LITERALMULT
+Rule 25    term -> QUOTEMULT
+Rule 26    term -> STRING
+Rule 27    term -> LITERALS
+Rule 28    term -> FLOAT
+Rule 29    term -> DATETIME
+Rule 30    term -> TIME
+Rule 31    term -> BOOL
+Rule 32    term -> OCT
+Rule 33    term -> BIN
+Rule 34    term -> HEX
+Rule 35    term -> INFINITY
+Rule 36    term -> NAN
+Rule 37    array -> [ array_elements ]
+Rule 38    inlinetable -> { inline_attributes }
+Rule 39    inline_attributes -> inline_attributes , attribute
+Rule 40    inline_attributes -> attribute
+Rule 41    inline_attributes -> empty
+Rule 42    array_elements -> array_elements , value
+Rule 43    array_elements -> value
+Rule 44    array_elements -> empty
+Rule 45    empty -> <empty>
+
+Terminals, with rules where they appear
+
+,                    : 39 42
+.                    : 15
+=                    : 14
+BIN                  : 33
+BOOL                 : 31
+DATETIME             : 29
+FLOAT                : 28
+HEX                  : 34
+INFINITY             : 35
+INT                  : 23
+LITERALMULT          : 24
+LITERALS             : 27
+NAN                  : 36
+OCT                  : 32
+QUOTEMULT            : 25
+STRING               : 18 26
+TIME                 : 30
+WORD                 : 17
+[                    : 9 11 19 37
+]                    : 9 11 19 37
+error                : 
+{                    : 38
+}                    : 38
+
+Nonterminals, with rules where they appear
+
+array                : 21
+array_elements       : 37 42
+arraytable           : 3 7
+attribute            : 12 13 39 40
+attributes           : 5 8 9 12
+empty                : 4 10 11 41 44
+header               : 8 9 10 11
+inline_attributes    : 38 39
+inlinetable          : 22
+key                  : 14 15 19
+root                 : 0
+simplekey            : 15 16
+table                : 2 6
+term                 : 20
+toml                 : 1 5 6 7
+value                : 14 42 43
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . root
+    (1) root -> . toml
+    (2) toml -> . table
+    (3) toml -> . arraytable
+    (4) toml -> . empty
+    (5) toml -> . toml attributes
+    (6) toml -> . toml table
+    (7) toml -> . toml arraytable
+    (8) table -> . header attributes
+    (10) table -> . header empty
+    (9) arraytable -> . [ header ] attributes
+    (11) arraytable -> . [ header ] empty
+    (45) empty -> .
+    (19) header -> . [ key ]
+
+  ! shift/reduce conflict for [ resolved as shift
+    [               shift and go to state 7
+    WORD            reduce using rule 45 (empty -> .)
+    STRING          reduce using rule 45 (empty -> .)
+    $end            reduce using rule 45 (empty -> .)
+
+  ! [               [ reduce using rule 45 (empty -> .) ]
+
+    root                           shift and go to state 1
+    toml                           shift and go to state 2
+    table                          shift and go to state 3
+    arraytable                     shift and go to state 4
+    empty                          shift and go to state 5
+    header                         shift and go to state 6
+
+state 1
+
+    (0) S' -> root .
+
+
+
+state 2
+
+    (1) root -> toml .
+    (5) toml -> toml . attributes
+    (6) toml -> toml . table
+    (7) toml -> toml . arraytable
+    (12) attributes -> . attributes attribute
+    (13) attributes -> . attribute
+    (8) table -> . header attributes
+    (10) table -> . header empty
+    (9) arraytable -> . [ header ] attributes
+    (11) arraytable -> . [ header ] empty
+    (14) attribute -> . key = value
+    (19) header -> . [ key ]
+    (15) key -> . key . simplekey
+    (16) key -> . simplekey
+    (17) simplekey -> . WORD
+    (18) simplekey -> . STRING
+
+    $end            reduce using rule 1 (root -> toml .)
+    [               shift and go to state 7
+    WORD            shift and go to state 14
+    STRING          shift and go to state 15
+
+    attributes                     shift and go to state 8
+    table                          shift and go to state 9
+    arraytable                     shift and go to state 10
+    attribute                      shift and go to state 11
+    header                         shift and go to state 6
+    key                            shift and go to state 12
+    simplekey                      shift and go to state 13
+
+state 3
+
+    (2) toml -> table .
+
+    [               reduce using rule 2 (toml -> table .)
+    WORD            reduce using rule 2 (toml -> table .)
+    STRING          reduce using rule 2 (toml -> table .)
+    $end            reduce using rule 2 (toml -> table .)
+
+
+state 4
+
+    (3) toml -> arraytable .
+
+    [               reduce using rule 3 (toml -> arraytable .)
+    WORD            reduce using rule 3 (toml -> arraytable .)
+    STRING          reduce using rule 3 (toml -> arraytable .)
+    $end            reduce using rule 3 (toml -> arraytable .)
+
+
+state 5
+
+    (4) toml -> empty .
+
+    [               reduce using rule 4 (toml -> empty .)
+    WORD            reduce using rule 4 (toml -> empty .)
+    STRING          reduce using rule 4 (toml -> empty .)
+    $end            reduce using rule 4 (toml -> empty .)
+
+
+state 6
+
+    (8) table -> header . attributes
+    (10) table -> header . empty
+    (12) attributes -> . attributes attribute
+    (13) attributes -> . attribute
+    (45) empty -> .
+    (14) attribute -> . key = value
+    (15) key -> . key . simplekey
+    (16) key -> . simplekey
+    (17) simplekey -> . WORD
+    (18) simplekey -> . STRING
+
+  ! shift/reduce conflict for WORD resolved as shift
+  ! shift/reduce conflict for STRING resolved as shift
+    [               reduce using rule 45 (empty -> .)
+    $end            reduce using rule 45 (empty -> .)
+    WORD            shift and go to state 14
+    STRING          shift and go to state 15
+
+  ! WORD            [ reduce using rule 45 (empty -> .) ]
+  ! STRING          [ reduce using rule 45 (empty -> .) ]
+
+    attributes                     shift and go to state 16
+    empty                          shift and go to state 17
+    attribute                      shift and go to state 11
+    key                            shift and go to state 12
+    simplekey                      shift and go to state 13
+
+state 7
+
+    (9) arraytable -> [ . header ] attributes
+    (11) arraytable -> [ . header ] empty
+    (19) header -> [ . key ]
+    (19) header -> . [ key ]
+    (15) key -> . key . simplekey
+    (16) key -> . simplekey
+    (17) simplekey -> . WORD
+    (18) simplekey -> . STRING
+
+    [               shift and go to state 18
+    WORD            shift and go to state 14
+    STRING          shift and go to state 15
+
+    header                         shift and go to state 19
+    key                            shift and go to state 20
+    simplekey                      shift and go to state 13
+
+state 8
+
+    (5) toml -> toml attributes .
+    (12) attributes -> attributes . attribute
+    (14) attribute -> . key = value
+    (15) key -> . key . simplekey
+    (16) key -> . simplekey
+    (17) simplekey -> . WORD
+    (18) simplekey -> . STRING
+
+  ! shift/reduce conflict for WORD resolved as shift
+  ! shift/reduce conflict for STRING resolved as shift
+    [               reduce using rule 5 (toml -> toml attributes .)
+    $end            reduce using rule 5 (toml -> toml attributes .)
+    WORD            shift and go to state 14
+    STRING          shift and go to state 15
+
+  ! WORD            [ reduce using rule 5 (toml -> toml attributes .) ]
+  ! STRING          [ reduce using rule 5 (toml -> toml attributes .) ]
+
+    attribute                      shift and go to state 21
+    key                            shift and go to state 12
+    simplekey                      shift and go to state 13
+
+state 9
+
+    (6) toml -> toml table .
+
+    [               reduce using rule 6 (toml -> toml table .)
+    WORD            reduce using rule 6 (toml -> toml table .)
+    STRING          reduce using rule 6 (toml -> toml table .)
+    $end            reduce using rule 6 (toml -> toml table .)
+
+
+state 10
+
+    (7) toml -> toml arraytable .
+
+    [               reduce using rule 7 (toml -> toml arraytable .)
+    WORD            reduce using rule 7 (toml -> toml arraytable .)
+    STRING          reduce using rule 7 (toml -> toml arraytable .)
+    $end            reduce using rule 7 (toml -> toml arraytable .)
+
+
+state 11
+
+    (13) attributes -> attribute .
+
+    WORD            reduce using rule 13 (attributes -> attribute .)
+    STRING          reduce using rule 13 (attributes -> attribute .)
+    [               reduce using rule 13 (attributes -> attribute .)
+    $end            reduce using rule 13 (attributes -> attribute .)
+
+
+state 12
+
+    (14) attribute -> key . = value
+    (15) key -> key . . simplekey
+
+    =               shift and go to state 22
+    .               shift and go to state 23
+
+
+state 13
+
+    (16) key -> simplekey .
+
+    =               reduce using rule 16 (key -> simplekey .)
+    .               reduce using rule 16 (key -> simplekey .)
+    ]               reduce using rule 16 (key -> simplekey .)
+
+
+state 14
+
+    (17) simplekey -> WORD .
+
+    =               reduce using rule 17 (simplekey -> WORD .)
+    .               reduce using rule 17 (simplekey -> WORD .)
+    ]               reduce using rule 17 (simplekey -> WORD .)
+
+
+state 15
+
+    (18) simplekey -> STRING .
+
+    =               reduce using rule 18 (simplekey -> STRING .)
+    .               reduce using rule 18 (simplekey -> STRING .)
+    ]               reduce using rule 18 (simplekey -> STRING .)
+
+
+state 16
+
+    (8) table -> header attributes .
+    (12) attributes -> attributes . attribute
+    (14) attribute -> . key = value
+    (15) key -> . key . simplekey
+    (16) key -> . simplekey
+    (17) simplekey -> . WORD
+    (18) simplekey -> . STRING
+
+  ! shift/reduce conflict for WORD resolved as shift
+  ! shift/reduce conflict for STRING resolved as shift
+    [               reduce using rule 8 (table -> header attributes .)
+    $end            reduce using rule 8 (table -> header attributes .)
+    WORD            shift and go to state 14
+    STRING          shift and go to state 15
+
+  ! WORD            [ reduce using rule 8 (table -> header attributes .) ]
+  ! STRING          [ reduce using rule 8 (table -> header attributes .) ]
+
+    attribute                      shift and go to state 21
+    key                            shift and go to state 12
+    simplekey                      shift and go to state 13
+
+state 17
+
+    (10) table -> header empty .
+
+    [               reduce using rule 10 (table -> header empty .)
+    WORD            reduce using rule 10 (table -> header empty .)
+    STRING          reduce using rule 10 (table -> header empty .)
+    $end            reduce using rule 10 (table -> header empty .)
+
+
+state 18
+
+    (19) header -> [ . key ]
+    (15) key -> . key . simplekey
+    (16) key -> . simplekey
+    (17) simplekey -> . WORD
+    (18) simplekey -> . STRING
+
+    WORD            shift and go to state 14
+    STRING          shift and go to state 15
+
+    key                            shift and go to state 20
+    simplekey                      shift and go to state 13
+
+state 19
+
+    (9) arraytable -> [ header . ] attributes
+    (11) arraytable -> [ header . ] empty
+
+    ]               shift and go to state 24
+
+
+state 20
+
+    (19) header -> [ key . ]
+    (15) key -> key . . simplekey
+
+    ]               shift and go to state 25
+    .               shift and go to state 23
+
+
+state 21
+
+    (12) attributes -> attributes attribute .
+
+    WORD            reduce using rule 12 (attributes -> attributes attribute .)
+    STRING          reduce using rule 12 (attributes -> attributes attribute .)
+    [               reduce using rule 12 (attributes -> attributes attribute .)
+    $end            reduce using rule 12 (attributes -> attributes attribute .)
+
+
+state 22
+
+    (14) attribute -> key = . value
+    (20) value -> . term
+    (21) value -> . array
+    (22) value -> . inlinetable
+    (23) term -> . INT
+    (24) term -> . LITERALMULT
+    (25) term -> . QUOTEMULT
+    (26) term -> . STRING
+    (27) term -> . LITERALS
+    (28) term -> . FLOAT
+    (29) term -> . DATETIME
+    (30) term -> . TIME
+    (31) term -> . BOOL
+    (32) term -> . OCT
+    (33) term -> . BIN
+    (34) term -> . HEX
+    (35) term -> . INFINITY
+    (36) term -> . NAN
+    (37) array -> . [ array_elements ]
+    (38) inlinetable -> . { inline_attributes }
+
+    INT             shift and go to state 30
+    LITERALMULT     shift and go to state 31
+    QUOTEMULT       shift and go to state 32
+    STRING          shift and go to state 33
+    LITERALS        shift and go to state 34
+    FLOAT           shift and go to state 35
+    DATETIME        shift and go to state 36
+    TIME            shift and go to state 37
+    BOOL            shift and go to state 38
+    OCT             shift and go to state 39
+    BIN             shift and go to state 40
+    HEX             shift and go to state 41
+    INFINITY        shift and go to state 42
+    NAN             shift and go to state 43
+    [               shift and go to state 44
+    {               shift and go to state 45
+
+    value                          shift and go to state 26
+    term                           shift and go to state 27
+    array                          shift and go to state 28
+    inlinetable                    shift and go to state 29
+
+state 23
+
+    (15) key -> key . . simplekey
+    (17) simplekey -> . WORD
+    (18) simplekey -> . STRING
+
+    WORD            shift and go to state 14
+    STRING          shift and go to state 15
+
+    simplekey                      shift and go to state 46
+
+state 24
+
+    (9) arraytable -> [ header ] . attributes
+    (11) arraytable -> [ header ] . empty
+    (12) attributes -> . attributes attribute
+    (13) attributes -> . attribute
+    (45) empty -> .
+    (14) attribute -> . key = value
+    (15) key -> . key . simplekey
+    (16) key -> . simplekey
+    (17) simplekey -> . WORD
+    (18) simplekey -> . STRING
+
+  ! shift/reduce conflict for WORD resolved as shift
+  ! shift/reduce conflict for STRING resolved as shift
+    [               reduce using rule 45 (empty -> .)
+    $end            reduce using rule 45 (empty -> .)
+    WORD            shift and go to state 14
+    STRING          shift and go to state 15
+
+  ! WORD            [ reduce using rule 45 (empty -> .) ]
+  ! STRING          [ reduce using rule 45 (empty -> .) ]
+
+    attributes                     shift and go to state 47
+    empty                          shift and go to state 48
+    attribute                      shift and go to state 11
+    key                            shift and go to state 12
+    simplekey                      shift and go to state 13
+
+state 25
+
+    (19) header -> [ key ] .
+
+    WORD            reduce using rule 19 (header -> [ key ] .)
+    STRING          reduce using rule 19 (header -> [ key ] .)
+    [               reduce using rule 19 (header -> [ key ] .)
+    $end            reduce using rule 19 (header -> [ key ] .)
+    ]               reduce using rule 19 (header -> [ key ] .)
+
+
+state 26
+
+    (14) attribute -> key = value .
+
+    WORD            reduce using rule 14 (attribute -> key = value .)
+    STRING          reduce using rule 14 (attribute -> key = value .)
+    [               reduce using rule 14 (attribute -> key = value .)
+    $end            reduce using rule 14 (attribute -> key = value .)
+    }               reduce using rule 14 (attribute -> key = value .)
+    ,               reduce using rule 14 (attribute -> key = value .)
+
+
+state 27
+
+    (20) value -> term .
+
+    WORD            reduce using rule 20 (value -> term .)
+    STRING          reduce using rule 20 (value -> term .)
+    [               reduce using rule 20 (value -> term .)
+    $end            reduce using rule 20 (value -> term .)
+    }               reduce using rule 20 (value -> term .)
+    ,               reduce using rule 20 (value -> term .)
+    ]               reduce using rule 20 (value -> term .)
+
+
+state 28
+
+    (21) value -> array .
+
+    WORD            reduce using rule 21 (value -> array .)
+    STRING          reduce using rule 21 (value -> array .)
+    [               reduce using rule 21 (value -> array .)
+    $end            reduce using rule 21 (value -> array .)
+    }               reduce using rule 21 (value -> array .)
+    ,               reduce using rule 21 (value -> array .)
+    ]               reduce using rule 21 (value -> array .)
+
+
+state 29
+
+    (22) value -> inlinetable .
+
+    WORD            reduce using rule 22 (value -> inlinetable .)
+    STRING          reduce using rule 22 (value -> inlinetable .)
+    [               reduce using rule 22 (value -> inlinetable .)
+    $end            reduce using rule 22 (value -> inlinetable .)
+    }               reduce using rule 22 (value -> inlinetable .)
+    ,               reduce using rule 22 (value -> inlinetable .)
+    ]               reduce using rule 22 (value -> inlinetable .)
+
+
+state 30
+
+    (23) term -> INT .
+
+    WORD            reduce using rule 23 (term -> INT .)
+    STRING          reduce using rule 23 (term -> INT .)
+    [               reduce using rule 23 (term -> INT .)
+    $end            reduce using rule 23 (term -> INT .)
+    }               reduce using rule 23 (term -> INT .)
+    ,               reduce using rule 23 (term -> INT .)
+    ]               reduce using rule 23 (term -> INT .)
+
+
+state 31
+
+    (24) term -> LITERALMULT .
+
+    WORD            reduce using rule 24 (term -> LITERALMULT .)
+    STRING          reduce using rule 24 (term -> LITERALMULT .)
+    [               reduce using rule 24 (term -> LITERALMULT .)
+    $end            reduce using rule 24 (term -> LITERALMULT .)
+    }               reduce using rule 24 (term -> LITERALMULT .)
+    ,               reduce using rule 24 (term -> LITERALMULT .)
+    ]               reduce using rule 24 (term -> LITERALMULT .)
+
+
+state 32
+
+    (25) term -> QUOTEMULT .
+
+    WORD            reduce using rule 25 (term -> QUOTEMULT .)
+    STRING          reduce using rule 25 (term -> QUOTEMULT .)
+    [               reduce using rule 25 (term -> QUOTEMULT .)
+    $end            reduce using rule 25 (term -> QUOTEMULT .)
+    }               reduce using rule 25 (term -> QUOTEMULT .)
+    ,               reduce using rule 25 (term -> QUOTEMULT .)
+    ]               reduce using rule 25 (term -> QUOTEMULT .)
+
+
+state 33
+
+    (26) term -> STRING .
+
+    WORD            reduce using rule 26 (term -> STRING .)
+    STRING          reduce using rule 26 (term -> STRING .)
+    [               reduce using rule 26 (term -> STRING .)
+    $end            reduce using rule 26 (term -> STRING .)
+    }               reduce using rule 26 (term -> STRING .)
+    ,               reduce using rule 26 (term -> STRING .)
+    ]               reduce using rule 26 (term -> STRING .)
+
+
+state 34
+
+    (27) term -> LITERALS .
+
+    WORD            reduce using rule 27 (term -> LITERALS .)
+    STRING          reduce using rule 27 (term -> LITERALS .)
+    [               reduce using rule 27 (term -> LITERALS .)
+    $end            reduce using rule 27 (term -> LITERALS .)
+    }               reduce using rule 27 (term -> LITERALS .)
+    ,               reduce using rule 27 (term -> LITERALS .)
+    ]               reduce using rule 27 (term -> LITERALS .)
+
+
+state 35
+
+    (28) term -> FLOAT .
+
+    WORD            reduce using rule 28 (term -> FLOAT .)
+    STRING          reduce using rule 28 (term -> FLOAT .)
+    [               reduce using rule 28 (term -> FLOAT .)
+    $end            reduce using rule 28 (term -> FLOAT .)
+    }               reduce using rule 28 (term -> FLOAT .)
+    ,               reduce using rule 28 (term -> FLOAT .)
+    ]               reduce using rule 28 (term -> FLOAT .)
+
+
+state 36
+
+    (29) term -> DATETIME .
+
+    WORD            reduce using rule 29 (term -> DATETIME .)
+    STRING          reduce using rule 29 (term -> DATETIME .)
+    [               reduce using rule 29 (term -> DATETIME .)
+    $end            reduce using rule 29 (term -> DATETIME .)
+    }               reduce using rule 29 (term -> DATETIME .)
+    ,               reduce using rule 29 (term -> DATETIME .)
+    ]               reduce using rule 29 (term -> DATETIME .)
+
+
+state 37
+
+    (30) term -> TIME .
+
+    WORD            reduce using rule 30 (term -> TIME .)
+    STRING          reduce using rule 30 (term -> TIME .)
+    [               reduce using rule 30 (term -> TIME .)
+    $end            reduce using rule 30 (term -> TIME .)
+    }               reduce using rule 30 (term -> TIME .)
+    ,               reduce using rule 30 (term -> TIME .)
+    ]               reduce using rule 30 (term -> TIME .)
+
+
+state 38
+
+    (31) term -> BOOL .
+
+    WORD            reduce using rule 31 (term -> BOOL .)
+    STRING          reduce using rule 31 (term -> BOOL .)
+    [               reduce using rule 31 (term -> BOOL .)
+    $end            reduce using rule 31 (term -> BOOL .)
+    }               reduce using rule 31 (term -> BOOL .)
+    ,               reduce using rule 31 (term -> BOOL .)
+    ]               reduce using rule 31 (term -> BOOL .)
+
+
+state 39
+
+    (32) term -> OCT .
+
+    WORD            reduce using rule 32 (term -> OCT .)
+    STRING          reduce using rule 32 (term -> OCT .)
+    [               reduce using rule 32 (term -> OCT .)
+    $end            reduce using rule 32 (term -> OCT .)
+    }               reduce using rule 32 (term -> OCT .)
+    ,               reduce using rule 32 (term -> OCT .)
+    ]               reduce using rule 32 (term -> OCT .)
+
+
+state 40
+
+    (33) term -> BIN .
+
+    WORD            reduce using rule 33 (term -> BIN .)
+    STRING          reduce using rule 33 (term -> BIN .)
+    [               reduce using rule 33 (term -> BIN .)
+    $end            reduce using rule 33 (term -> BIN .)
+    }               reduce using rule 33 (term -> BIN .)
+    ,               reduce using rule 33 (term -> BIN .)
+    ]               reduce using rule 33 (term -> BIN .)
+
+
+state 41
+
+    (34) term -> HEX .
+
+    WORD            reduce using rule 34 (term -> HEX .)
+    STRING          reduce using rule 34 (term -> HEX .)
+    [               reduce using rule 34 (term -> HEX .)
+    $end            reduce using rule 34 (term -> HEX .)
+    }               reduce using rule 34 (term -> HEX .)
+    ,               reduce using rule 34 (term -> HEX .)
+    ]               reduce using rule 34 (term -> HEX .)
+
+
+state 42
+
+    (35) term -> INFINITY .
+
+    WORD            reduce using rule 35 (term -> INFINITY .)
+    STRING          reduce using rule 35 (term -> INFINITY .)
+    [               reduce using rule 35 (term -> INFINITY .)
+    $end            reduce using rule 35 (term -> INFINITY .)
+    }               reduce using rule 35 (term -> INFINITY .)
+    ,               reduce using rule 35 (term -> INFINITY .)
+    ]               reduce using rule 35 (term -> INFINITY .)
+
+
+state 43
+
+    (36) term -> NAN .
+
+    WORD            reduce using rule 36 (term -> NAN .)
+    STRING          reduce using rule 36 (term -> NAN .)
+    [               reduce using rule 36 (term -> NAN .)
+    $end            reduce using rule 36 (term -> NAN .)
+    }               reduce using rule 36 (term -> NAN .)
+    ,               reduce using rule 36 (term -> NAN .)
+    ]               reduce using rule 36 (term -> NAN .)
+
+
+state 44
+
+    (37) array -> [ . array_elements ]
+    (42) array_elements -> . array_elements , value
+    (43) array_elements -> . value
+    (44) array_elements -> . empty
+    (20) value -> . term
+    (21) value -> . array
+    (22) value -> . inlinetable
+    (45) empty -> .
+    (23) term -> . INT
+    (24) term -> . LITERALMULT
+    (25) term -> . QUOTEMULT
+    (26) term -> . STRING
+    (27) term -> . LITERALS
+    (28) term -> . FLOAT
+    (29) term -> . DATETIME
+    (30) term -> . TIME
+    (31) term -> . BOOL
+    (32) term -> . OCT
+    (33) term -> . BIN
+    (34) term -> . HEX
+    (35) term -> . INFINITY
+    (36) term -> . NAN
+    (37) array -> . [ array_elements ]
+    (38) inlinetable -> . { inline_attributes }
+
+    ]               reduce using rule 45 (empty -> .)
+    ,               reduce using rule 45 (empty -> .)
+    INT             shift and go to state 30
+    LITERALMULT     shift and go to state 31
+    QUOTEMULT       shift and go to state 32
+    STRING          shift and go to state 33
+    LITERALS        shift and go to state 34
+    FLOAT           shift and go to state 35
+    DATETIME        shift and go to state 36
+    TIME            shift and go to state 37
+    BOOL            shift and go to state 38
+    OCT             shift and go to state 39
+    BIN             shift and go to state 40
+    HEX             shift and go to state 41
+    INFINITY        shift and go to state 42
+    NAN             shift and go to state 43
+    [               shift and go to state 44
+    {               shift and go to state 45
+
+    array_elements                 shift and go to state 49
+    value                          shift and go to state 50
+    empty                          shift and go to state 51
+    term                           shift and go to state 27
+    array                          shift and go to state 28
+    inlinetable                    shift and go to state 29
+
+state 45
+
+    (38) inlinetable -> { . inline_attributes }
+    (39) inline_attributes -> . inline_attributes , attribute
+    (40) inline_attributes -> . attribute
+    (41) inline_attributes -> . empty
+    (14) attribute -> . key = value
+    (45) empty -> .
+    (15) key -> . key . simplekey
+    (16) key -> . simplekey
+    (17) simplekey -> . WORD
+    (18) simplekey -> . STRING
+
+    }               reduce using rule 45 (empty -> .)
+    ,               reduce using rule 45 (empty -> .)
+    WORD            shift and go to state 14
+    STRING          shift and go to state 15
+
+    inline_attributes              shift and go to state 52
+    attribute                      shift and go to state 53
+    empty                          shift and go to state 54
+    key                            shift and go to state 12
+    simplekey                      shift and go to state 13
+
+state 46
+
+    (15) key -> key . simplekey .
+
+    =               reduce using rule 15 (key -> key . simplekey .)
+    .               reduce using rule 15 (key -> key . simplekey .)
+    ]               reduce using rule 15 (key -> key . simplekey .)
+
+
+state 47
+
+    (9) arraytable -> [ header ] attributes .
+    (12) attributes -> attributes . attribute
+    (14) attribute -> . key = value
+    (15) key -> . key . simplekey
+    (16) key -> . simplekey
+    (17) simplekey -> . WORD
+    (18) simplekey -> . STRING
+
+  ! shift/reduce conflict for WORD resolved as shift
+  ! shift/reduce conflict for STRING resolved as shift
+    [               reduce using rule 9 (arraytable -> [ header ] attributes .)
+    $end            reduce using rule 9 (arraytable -> [ header ] attributes .)
+    WORD            shift and go to state 14
+    STRING          shift and go to state 15
+
+  ! WORD            [ reduce using rule 9 (arraytable -> [ header ] attributes .) ]
+  ! STRING          [ reduce using rule 9 (arraytable -> [ header ] attributes .) ]
+
+    attribute                      shift and go to state 21
+    key                            shift and go to state 12
+    simplekey                      shift and go to state 13
+
+state 48
+
+    (11) arraytable -> [ header ] empty .
+
+    [               reduce using rule 11 (arraytable -> [ header ] empty .)
+    WORD            reduce using rule 11 (arraytable -> [ header ] empty .)
+    STRING          reduce using rule 11 (arraytable -> [ header ] empty .)
+    $end            reduce using rule 11 (arraytable -> [ header ] empty .)
+
+
+state 49
+
+    (37) array -> [ array_elements . ]
+    (42) array_elements -> array_elements . , value
+
+    ]               shift and go to state 55
+    ,               shift and go to state 56
+
+
+state 50
+
+    (43) array_elements -> value .
+
+    ]               reduce using rule 43 (array_elements -> value .)
+    ,               reduce using rule 43 (array_elements -> value .)
+
+
+state 51
+
+    (44) array_elements -> empty .
+
+    ]               reduce using rule 44 (array_elements -> empty .)
+    ,               reduce using rule 44 (array_elements -> empty .)
+
+
+state 52
+
+    (38) inlinetable -> { inline_attributes . }
+    (39) inline_attributes -> inline_attributes . , attribute
+
+    }               shift and go to state 57
+    ,               shift and go to state 58
+
+
+state 53
+
+    (40) inline_attributes -> attribute .
+
+    }               reduce using rule 40 (inline_attributes -> attribute .)
+    ,               reduce using rule 40 (inline_attributes -> attribute .)
+
+
+state 54
+
+    (41) inline_attributes -> empty .
+
+    }               reduce using rule 41 (inline_attributes -> empty .)
+    ,               reduce using rule 41 (inline_attributes -> empty .)
+
+
+state 55
+
+    (37) array -> [ array_elements ] .
+
+    WORD            reduce using rule 37 (array -> [ array_elements ] .)
+    STRING          reduce using rule 37 (array -> [ array_elements ] .)
+    [               reduce using rule 37 (array -> [ array_elements ] .)
+    $end            reduce using rule 37 (array -> [ array_elements ] .)
+    }               reduce using rule 37 (array -> [ array_elements ] .)
+    ,               reduce using rule 37 (array -> [ array_elements ] .)
+    ]               reduce using rule 37 (array -> [ array_elements ] .)
+
+
+state 56
+
+    (42) array_elements -> array_elements , . value
+    (20) value -> . term
+    (21) value -> . array
+    (22) value -> . inlinetable
+    (23) term -> . INT
+    (24) term -> . LITERALMULT
+    (25) term -> . QUOTEMULT
+    (26) term -> . STRING
+    (27) term -> . LITERALS
+    (28) term -> . FLOAT
+    (29) term -> . DATETIME
+    (30) term -> . TIME
+    (31) term -> . BOOL
+    (32) term -> . OCT
+    (33) term -> . BIN
+    (34) term -> . HEX
+    (35) term -> . INFINITY
+    (36) term -> . NAN
+    (37) array -> . [ array_elements ]
+    (38) inlinetable -> . { inline_attributes }
+
+    INT             shift and go to state 30
+    LITERALMULT     shift and go to state 31
+    QUOTEMULT       shift and go to state 32
+    STRING          shift and go to state 33
+    LITERALS        shift and go to state 34
+    FLOAT           shift and go to state 35
+    DATETIME        shift and go to state 36
+    TIME            shift and go to state 37
+    BOOL            shift and go to state 38
+    OCT             shift and go to state 39
+    BIN             shift and go to state 40
+    HEX             shift and go to state 41
+    INFINITY        shift and go to state 42
+    NAN             shift and go to state 43
+    [               shift and go to state 44
+    {               shift and go to state 45
+
+    value                          shift and go to state 59
+    term                           shift and go to state 27
+    array                          shift and go to state 28
+    inlinetable                    shift and go to state 29
+
+state 57
+
+    (38) inlinetable -> { inline_attributes } .
+
+    WORD            reduce using rule 38 (inlinetable -> { inline_attributes } .)
+    STRING          reduce using rule 38 (inlinetable -> { inline_attributes } .)
+    [               reduce using rule 38 (inlinetable -> { inline_attributes } .)
+    $end            reduce using rule 38 (inlinetable -> { inline_attributes } .)
+    }               reduce using rule 38 (inlinetable -> { inline_attributes } .)
+    ,               reduce using rule 38 (inlinetable -> { inline_attributes } .)
+    ]               reduce using rule 38 (inlinetable -> { inline_attributes } .)
+
+
+state 58
+
+    (39) inline_attributes -> inline_attributes , . attribute
+    (14) attribute -> . key = value
+    (15) key -> . key . simplekey
+    (16) key -> . simplekey
+    (17) simplekey -> . WORD
+    (18) simplekey -> . STRING
+
+    WORD            shift and go to state 14
+    STRING          shift and go to state 15
+
+    attribute                      shift and go to state 60
+    key                            shift and go to state 12
+    simplekey                      shift and go to state 13
+
+state 59
+
+    (42) array_elements -> array_elements , value .
+
+    ]               reduce using rule 42 (array_elements -> array_elements , value .)
+    ,               reduce using rule 42 (array_elements -> array_elements , value .)
+
+
+state 60
+
+    (39) inline_attributes -> inline_attributes , attribute .
+
+    }               reduce using rule 39 (inline_attributes -> inline_attributes , attribute .)
+    ,               reduce using rule 39 (inline_attributes -> inline_attributes , attribute .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for [ in state 0 resolved as shift
+WARNING: shift/reduce conflict for WORD in state 6 resolved as shift
+WARNING: shift/reduce conflict for STRING in state 6 resolved as shift
+WARNING: shift/reduce conflict for WORD in state 8 resolved as shift
+WARNING: shift/reduce conflict for STRING in state 8 resolved as shift
+WARNING: shift/reduce conflict for WORD in state 16 resolved as shift
+WARNING: shift/reduce conflict for STRING in state 16 resolved as shift
+WARNING: shift/reduce conflict for WORD in state 24 resolved as shift
+WARNING: shift/reduce conflict for STRING in state 24 resolved as shift
+WARNING: shift/reduce conflict for WORD in state 47 resolved as shift
+WARNING: shift/reduce conflict for STRING in state 47 resolved as shift

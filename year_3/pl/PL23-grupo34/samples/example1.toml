@@ -1,0 +1,25 @@
+a = 0
+b = 1
+
+[owner.ho.q.e.r.t]
+name.ho.q.e.r.t = "Tom Preston-Werner"
+date = 2010-04-23
+time = 21:30:00
+
+[tabela]
+
+[database]
+server = "192.168.1.1"
+
+connection_max = 5000
+enabled = true
+
+[servers]
+ip = "10.0.0.1"
+dc = "eqdc10"
+a = {ip = "10.0.0.1", jk = "10.0.0.1"}
+
+array = [ 1,  2,
+3
+]
+# Line breaks are OK when inside arrays
