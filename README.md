@@ -1,26 +1,36 @@
-# University Graduation Projects
+# University Projects
 
-This repository will contains my favorite projects and exercises made during my Graduation in Software Engineering at University of Minho. Disclaimer: Most of the descriptions of projects and exercises were written in Portuguese.
+This repository will contains my favorite projects and exercises made during my Graduation and Masters degrees in Software Engineering at University of Minho. 
 
-## First Year
+Disclaimer: Most of the descriptions of projects and exercises were written in Portuguese.
 
-+ [LI1](https://github.com/VitorLelis/uminho-lei/tree/main/year_1/li1) - Laboratório de Informática 1
-+ [LI2](https://github.com/VitorLelis/uminho-lei/tree/main/year_1/li2) - Laboratório de Informática 2
-+ [PF](https://github.com/VitorLelis/uminho-lei/tree/main/year_1/pf) - Programação Funcional
-+ [PI](https://github.com/VitorLelis/uminho-lei/tree/main/year_1/pi) - Programação Imperativa
+## Graduation
 
-## Second Year
+### First Year
 
-+ [BD](https://github.com/VitorLelis/uminho-lei/tree/main/year_2/bd) - Base de Dados
-+ [POO](https://github.com/VitorLelis/uminho-lei/tree/main/year_2/poo) - Programação Orientada a Objetos
-+ [SO](https://github.com/VitorLelis/uminho-lei/tree/main/year_2/so) - Sistemas Operativos
++ [LI1](https://github.com/VitorLelis/uminho/tree/main/year_1/li1) - Laboratório de Informática 1
++ [LI2](https://github.com/VitorLelis/uminho/tree/main/year_1/li2) - Laboratório de Informática 2
++ [PF](https://github.com/VitorLelis/uminho/tree/main/year_1/pf) - Programação Funcional
++ [PI](https://github.com/VitorLelis/uminho/tree/main/year_1/pi) - Programação Imperativa
 
-## Third Year
+### Second Year
 
-+ [CP](https://github.com/VitorLelis/uminho-lei/tree/main/year_3/cp) - Cálculo de Programas
-+ [IA](https://github.com/VitorLelis/uminho-lei/tree/main/year_3/ia) - Inteligência Aritifical
-+ [PL](https://github.com/VitorLelis/uminho-lei/tree/main/year_3/pl) - Processamento de Linguagens
++ [BD](https://github.com/VitorLelis/uminho/tree/main/year_2/bd) - Base de Dados
++ [POO](https://github.com/VitorLelis/uminho/tree/main/year_2/poo) - Programação Orientada a Objetos
++ [SO](https://github.com/VitorLelis/uminho/tree/main/year_2/so) - Sistemas Operativos
 
-<sub>2019 - 2023</sub>
+### Third Year
+
++ [CP](https://github.com/VitorLelis/uminho/tree/main/year_3/cp) - Cálculo de Programas
++ [IA](https://github.com/VitorLelis/uminho/tree/main/year_3/ia) - Inteligência Aritifical
++ [PL](https://github.com/VitorLelis/uminho/tree/main/year_3/pl) - Processamento de Linguagens
+
+## Masters
+
+### Fourth Year
+
++ [CPar](https://github.com/VitorLelis/uminho/tree/main/year_4/cpar) - Computação Paralela
+
+<sub>2019 - Current</sub>
 
 <img src="https://www.eng.uminho.pt/SiteAssets/Logo.PNG" alt="University of Minho">
