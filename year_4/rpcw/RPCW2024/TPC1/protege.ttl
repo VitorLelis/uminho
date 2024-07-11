@@ -1,0 +1,178 @@
+@prefix : <http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3/> .
+
+<http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#possui
+:possui rdf:type owl:ObjectProperty ;
+        rdfs:domain :Rua ;
+        rdfs:range :Planta .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#se_encontra
+:se_encontra rdf:type owl:ObjectProperty ;
+             rdfs:domain :Planta ;
+             rdfs:range :Rua .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Caldeira
+:Caldeira rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Planta ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Codigo_de_rua
+:Codigo_de_rua rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Rua ;
+               rdfs:range xsd:long .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Data_de_Plantacao
+:Data_de_Plantacao rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Planta ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Data_de_actualizacao
+:Data_de_actualizacao rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Planta ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Especie
+:Especie rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Planta ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Estado
+:Estado rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Planta ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Freguesia
+:Freguesia rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Rua ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Gestor
+:Gestor rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Planta ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Id
+:Id rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Planta ;
+    rdfs:range xsd:long .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Implantacao
+:Implantacao rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Planta ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Local
+:Local rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Rua ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Nome_Cientifico
+:Nome_Cientifico rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Planta ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Numero_de_Registo
+:Numero_de_Registo rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Planta ;
+                   rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Numero_de_intervencoes
+:Numero_de_intervencoes rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Planta ;
+                        rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Origem
+:Origem rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Planta ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Rua
+:Rua rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Planta ,
+                 :Rua ;
+     rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Tutor
+:Tutor rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Planta ;
+       rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Planta
+:Planta rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#Rua
+:Rua rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#1685467
+<http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#1685467> rdf:type owl:NamedIndividual ;
+                                                                                       :possui <http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#20615564> ;
+                                                                                       :Codigo_de_rua "1685467"^^xsd:long ;
+                                                                                       :Freguesia "Alcabideche" ;
+                                                                                       :Local "Zambujeiro" ;
+                                                                                       :Rua "Rua Júlio Dinis" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#20615564
+<http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#20615564> rdf:type owl:NamedIndividual ;
+                                                                                        :se_encontra <http://www.semanticweb.org/lelis_vitor/ontologies/2024/1/untitled-ontology-3#1685467> ;
+                                                                                        :Caldeira "Sim" ;
+                                                                                        :Data_de_Plantacao "" ;
+                                                                                        :Data_de_actualizacao "23/07/2021 19:50:36" ;
+                                                                                        :Especie "pinheiro manso" ;
+                                                                                        :Estado "Adulto" ;
+                                                                                        :Gestor "DGEV" ;
+                                                                                        :Id "20615564"^^xsd:long ;
+                                                                                        :Implantacao "Arruamento" ;
+                                                                                        :Nome_Cientifico "Pinus pinea" ;
+                                                                                        :Numero_de_Registo "4"^^xsd:int ;
+                                                                                        :Numero_de_intervencoes "7"^^xsd:int ;
+                                                                                        :Origem "" ;
+                                                                                        :Rua "Rua Júlio Dinis" ;
+                                                                                        :Tutor "Sim" .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

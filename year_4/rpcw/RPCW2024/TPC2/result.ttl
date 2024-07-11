@@ -1,0 +1,5033 @@
+
+@prefix : <http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7/> .
+
+<http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#ensinadoNoCurso
+:ensinadoNoCurso rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :instrumentoEnsinado .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#estuda
+:estuda rdf:type owl:ObjectProperty ;
+        owl:inverseOf :estudadoPor ;
+        rdfs:domain :Aluno ;
+        rdfs:range :Curso .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#estudadoPor
+:estudadoPor rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#instrumentoEnsinado
+:instrumentoEnsinado rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Curso ;
+                     rdfs:range :Instrumento .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#AlunoAno
+:AlunoAno rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Aluno ;
+          rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#AlunoCurso
+:AlunoCurso rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :Aluno ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#AlunoId
+:AlunoId rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Aluno ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#AlunoInstrumento
+:AlunoInstrumento rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :Aluno ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#AlunoNasc
+:AlunoNasc rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Aluno ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#AlunoNome
+:AlunoNome rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Aluno ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CursoDesignacao
+:CursoDesignacao rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Curso ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CursoDuracao
+:CursoDuracao rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Curso ;
+              rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CursoId
+:CursoId rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Curso ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#InstrumentoId
+:InstrumentoId rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Instrumento ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#InstrumentoText
+:InstrumentoText rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Instrumento ;
+                 rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#Aluno
+:Aluno rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#Curso
+:Curso rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#Instrumento
+:Instrumento rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A1510 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB8 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB8" ;
+       :AlunoId "A1510" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "1999-4-19" ;
+       :AlunoNome "ADEMAR FONTES DE MAGALHAES GONCALVES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A32597 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS19 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS19" ;
+       :AlunoId "A32597" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "2004-9-5" ;
+       :AlunoNome "ADERITO NELSON MIRANDA DE OLIVEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36539 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS21 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS21" ;
+       :AlunoId "A36539" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "2002-10-26" ;
+       :AlunoNome "ADMILSON CESAR ANDRADE RODRIGUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38165 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB5 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB5" ;
+       :AlunoId "A38165" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "1996-2-25" ;
+       :AlunoNome "AFONSO DELERUE ARRIAGA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38176 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB5 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB5" ;
+       :AlunoId "A38176" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "2000-7-18" ;
+       :AlunoNome "AGOSTINHO MANUEL ALVES DA SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38196 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB14 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB14" ;
+       :AlunoId "A38196" ;
+       :AlunoInstrumento "Saxofone" ;
+       :AlunoNasc "1997-12-7" ;
+       :AlunoNome "ALEXANDRE COELHO CARVALHO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35271 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS6 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS6" ;
+       :AlunoId "A35271" ;
+       :AlunoInstrumento "Flauta" ;
+       :AlunoNasc "2002-12-20" ;
+       :AlunoNome "ALEXANDRE JORGE CAMELO FARIA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38193 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB17 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB17" ;
+       :AlunoId "A38193" ;
+       :AlunoInstrumento "Trompete" ;
+       :AlunoNasc "2001-2-2" ;
+       :AlunoNome "ALEXANDRE MANUEL PEREIRA DE MIRANDA PINTO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A18141 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB11 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB11" ;
+       :AlunoId "A18141" ;
+       :AlunoInstrumento "Orgão" ;
+       :AlunoNasc "2001-6-23" ;
+       :AlunoNome "ALEXANDRE MIGUEL DA COSTA FERREIRA DOS SANTOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38218 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS13 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS13" ;
+       :AlunoId "A38218" ;
+       :AlunoInstrumento "Piano" ;
+       :AlunoNasc "2002-7-14" ;
+       :AlunoNome "ALEXANDRINA MARIA FERREIRA LEMOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36487 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB17 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB17" ;
+       :AlunoId "A36487" ;
+       :AlunoInstrumento "Trompete" ;
+       :AlunoNasc "1996-1-7" ;
+       :AlunoNome "ALI DOS REIS MOTA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35272 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB10 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB10" ;
+       :AlunoId "A35272" ;
+       :AlunoInstrumento "Oboé" ;
+       :AlunoNasc "1997-11-7" ;
+       :AlunoNome "ANA LUISA PARREIRA NUNES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A27589 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS9 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS9" ;
+       :AlunoId "A27589" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "2002-1-13" ;
+       :AlunoNome "ANA MARGARIDA FIDALGO PINHEIRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A25073 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS19 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS19" ;
+       :AlunoId "A25073" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "2003-12-12" ;
+       :AlunoNome "ANA MARGARIDA LIMA ALEM" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38169 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB4 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB4" ;
+       :AlunoId "A38169" ;
+       :AlunoInstrumento "Eufónio" ;
+       :AlunoNasc "1999-6-5" ;
+       :AlunoNome "ANDRE ABILIO NUNES ROCHA RODRIGUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33822 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB1 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB1" ;
+       :AlunoId "A33822" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "2001-11-13" ;
+       :AlunoNome "ANDRE FERNANDES MARTINS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38214 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB9 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB9" ;
+       :AlunoId "A38214" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "1997-2-14" ;
+       :AlunoNome "ANDRE FILIPE DE SOUSA VIVEIROS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35274 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS21 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS21" ;
+       :AlunoId "A35274" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "2003-7-20" ;
+       :AlunoNome "ANDRE FILIPE OLIVEIRA MARTINS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A29871 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB14 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB14" ;
+       :AlunoId "A29871" ;
+       :AlunoInstrumento "Saxofone" ;
+       :AlunoNasc "1997-8-1" ;
+       :AlunoNome "ANDRE LEITE FERREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38215 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB16 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB16" ;
+       :AlunoId "A38215" ;
+       :AlunoInstrumento "Trompa" ;
+       :AlunoNasc "1998-5-28" ;
+       :AlunoNome "ANDRE RIBEIRO RODRIGUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38117 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS19 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS19" ;
+       :AlunoId "A38117" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "2002-2-20" ;
+       :AlunoNome "ANTONIO ANDRE MARQUES RIBEIRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35277 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS2 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS2" ;
+       :AlunoId "A35277" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "2002-5-5" ;
+       :AlunoNome "ANTONIO MANUEL MARTINS PINTO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35278 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB2 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB2" ;
+       :AlunoId "A35278" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "2001-3-13" ;
+       :AlunoNome "ANTONIO MANUEL RODRIGUES FERNANDES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38138 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB22 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB22" ;
+       :AlunoId "A38138" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "1998-10-7" ;
+       :AlunoNome "ANTONIO NUNO BACELAR MARTINS BARREIRO COVAS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35280 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB5 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB5" ;
+       :AlunoId "A35280" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "1997-2-10" ;
+       :AlunoNome "ANTONIO RICARDO PEREIRA GONCALVES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33057 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB8 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB8" ;
+       :AlunoId "A33057" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "1999-7-5" ;
+       :AlunoNome "ANTONIO RUI MIRANDA DE LEMOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38143 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB3 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB3" ;
+       :AlunoId "A38143" ;
+       :AlunoInstrumento "Corne Inglês" ;
+       :AlunoNasc "2000-1-9" ;
+       :AlunoNome "ANTONIO SERGIO MATOS SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30166 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB17 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB17" ;
+       :AlunoId "A30166" ;
+       :AlunoInstrumento "Trompete" ;
+       :AlunoNasc "2001-9-6" ;
+       :AlunoNome "ANTONIO TIAGO MORGADO PEREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36971 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB22 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB22" ;
+       :AlunoId "A36971" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "2001-4-2" ;
+       :AlunoNome "AUGUSTO JORGE PEREIRA DA COSTA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38132 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS21 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS21" ;
+       :AlunoId "A38132" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "2002-4-6" ;
+       :AlunoNome "AVELINO JOSE DA COSTA REGO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33140 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS7 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS7" ;
+       :AlunoId "A33140" ;
+       :AlunoInstrumento "Fliscorne" ;
+       :AlunoNasc "2005-2-11" ;
+       :AlunoNome "AVELINO RODRIGO ARAUJO SEMELHE DE SOUSA PINTO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33141 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB7 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB7" ;
+       :AlunoId "A33141" ;
+       :AlunoInstrumento "Fliscorne" ;
+       :AlunoNasc "1997-8-23" ;
+       :AlunoNome "BARBARA ALEXANDRA EUSEBIO FREITAS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33291 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB8 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB8" ;
+       :AlunoId "A33291" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "1996-9-28" ;
+       :AlunoNome "BARBARA SOFIA ARAUJO DA SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33142 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS1 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS1" ;
+       :AlunoId "A33142" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "2004-11-16" ;
+       :AlunoNome "BRUNO CESAR PEREIRA DA SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A20044 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB9 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB9" ;
+       :AlunoId "A20044" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "1999-7-28" ;
+       :AlunoNome "BRUNO DE ALMEIDA RAMOS PEREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35283 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB13 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB13" ;
+       :AlunoId "A35283" ;
+       :AlunoInstrumento "Piano" ;
+       :AlunoNasc "1999-2-22" ;
+       :AlunoNome "BRUNO EDGAR BERNARDO TEIXEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35284 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS8 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS8" ;
+       :AlunoId "A35284" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "2005-6-4" ;
+       :AlunoNome "BRUNO EMANUEL TEIXEIRA DE CASTRO ARAUJO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38156 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB6 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB6" ;
+       :AlunoId "A38156" ;
+       :AlunoInstrumento "Flauta" ;
+       :AlunoNasc "2000-6-11" ;
+       :AlunoNome "BRUNO FILIPE DA COSTA HERMENEGILDO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35285 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB8 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB8" ;
+       :AlunoId "A35285" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "1999-4-14" ;
+       :AlunoNome "BRUNO GABRIEL LEAL MACHADO DOS SANTOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36422 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB20 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB20" ;
+       :AlunoId "A36422" ;
+       :AlunoInstrumento "Violino" ;
+       :AlunoNasc "1999-2-14" ;
+       :AlunoNome "BRUNO JOSE DE MACEDO SOARES AMOR" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33143 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB3 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB3" ;
+       :AlunoId "A33143" ;
+       :AlunoInstrumento "Corne Inglês" ;
+       :AlunoNasc "1997-3-20" ;
+       :AlunoNome "BRUNO MIGUEL CAMPOS RODRIGUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33145 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB21 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB21" ;
+       :AlunoId "A33145" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "1997-6-20" ;
+       :AlunoNome "BRUNO MIGUEL FLORES DIAMANTINO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33146 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS18 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS18" ;
+       :AlunoId "A33146" ;
+       :AlunoInstrumento "Tuba" ;
+       :AlunoNasc "2003-11-15" ;
+       :AlunoNome "BRUNO MIGUEL MAGALHAES AZEVEDO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33148 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB15 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB15" ;
+       :AlunoId "A33148" ;
+       :AlunoInstrumento "Trombone" ;
+       :AlunoNasc "1998-3-21" ;
+       :AlunoNome "BRUNO MIGUEL TEIXEIRA PAIVA DE FARIA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38124 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB22 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB22" ;
+       :AlunoId "A38124" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "2000-1-21" ;
+       :AlunoNome "BRUNO RICARDO CUNHA MAGALHAES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30176 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB18 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB18" ;
+       :AlunoId "A30176" ;
+       :AlunoInstrumento "Tuba" ;
+       :AlunoNasc "1998-4-14" ;
+       :AlunoNome "BRUNO RICARDO DUARTE MAGALHAES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35808 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS7 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS7" ;
+       :AlunoId "A35808" ;
+       :AlunoInstrumento "Fliscorne" ;
+       :AlunoNasc "2002-11-11" ;
+       :AlunoNome "CANDIDO MIGUEL REBELO BARROS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38126 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS16 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS16" ;
+       :AlunoId "A38126" ;
+       :AlunoInstrumento "Trompa" ;
+       :AlunoNasc "2005-6-14" ;
+       :AlunoNome "CARLOS ALFREDO MACIEIRA DE FARIA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33689 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB2 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB2" ;
+       :AlunoId "A33689" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "2001-5-10" ;
+       :AlunoNome "CARLOS ANDRE BRITO RIBEIRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38125 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS8 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS8" ;
+       :AlunoId "A38125" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "2002-5-13" ;
+       :AlunoNome "CARLOS CESAR MADUREIRA ROMANO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A24654 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS14 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS14" ;
+       :AlunoId "A24654" ;
+       :AlunoInstrumento "Saxofone" ;
+       :AlunoNasc "2005-11-2" ;
+       :AlunoNome "CARLOS DE SOUSA CABRAL BRANDAO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A20021 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB19 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB19" ;
+       :AlunoId "A20021" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "1999-12-4" ;
+       :AlunoNome "CARLOS JOSE DA CUNHA RIBEIRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35291 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB15 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB15" ;
+       :AlunoId "A35291" ;
+       :AlunoInstrumento "Trombone" ;
+       :AlunoNasc "1998-6-17" ;
+       :AlunoNome "CARLOS MIGUEL TAVARES LOPES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A34640 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS3 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS3" ;
+       :AlunoId "A34640" ;
+       :AlunoInstrumento "Corne Inglês" ;
+       :AlunoNasc "2002-8-9" ;
+       :AlunoNome "CARLOS PRUDENCIO DO ESPIRITO CRISOSTOMO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38207 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS2 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS2" ;
+       :AlunoId "A38207" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "2003-8-22" ;
+       :AlunoNome "CATARINA ISABEL DE OLIVEIRA MATEUS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A32010 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS10 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS10" ;
+       :AlunoId "A32010" ;
+       :AlunoInstrumento "Oboé" ;
+       :AlunoNasc "2005-9-1" ;
+       :AlunoNome "CATARINA SOFIA MARTINHO LUIS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35052 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB2 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB2" ;
+       :AlunoId "A35052" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "1996-5-24" ;
+       :AlunoNome "CESAR FILIPE DA CRUZ GOMES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35440 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS18 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS18" ;
+       :AlunoId "A35440" ;
+       :AlunoInstrumento "Tuba" ;
+       :AlunoNasc "2002-6-26" ;
+       :AlunoNome "DANIEL BARBOSA ALVES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A32648 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS5 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS5" ;
+       :AlunoId "A32648" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "2002-1-23" ;
+       :AlunoNome "DANIEL FILIPE PERES FERREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33152 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB20 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB20" ;
+       :AlunoId "A33152" ;
+       :AlunoInstrumento "Violino" ;
+       :AlunoNasc "2001-10-12" ;
+       :AlunoNome "DANIEL RICARDO DE CASTRO MENDES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38211 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS12 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS12" ;
+       :AlunoId "A38211" ;
+       :AlunoInstrumento "Percussão" ;
+       :AlunoNasc "2003-8-16" ;
+       :AlunoNome "DANIEL TORRES GONCALVES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38210 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB5 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB5" ;
+       :AlunoId "A38210" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "1998-7-10" ;
+       :AlunoNome "DANIELA CRISTINA GARCIA TEIXEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A22854 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB5 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB5" ;
+       :AlunoId "A22854" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "1999-3-10" ;
+       :AlunoNome "DAVI CARNEIRO PEREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35293 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB6 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB6" ;
+       :AlunoId "A35293" ;
+       :AlunoInstrumento "Flauta" ;
+       :AlunoNasc "1999-11-22" ;
+       :AlunoNome "DAVID DANIEL CARDOSO DE OLIVEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35294 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB20 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB20" ;
+       :AlunoId "A35294" ;
+       :AlunoInstrumento "Violino" ;
+       :AlunoNasc "1996-11-20" ;
+       :AlunoNome "DIAMANTINO JOSE MADEIRA ABOBELEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38166 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB19 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB19" ;
+       :AlunoId "A38166" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "2000-6-26" ;
+       :AlunoNome "DIOGO FILIPE DA SILVA CARDOSO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38164 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS8 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS8" ;
+       :AlunoId "A38164" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "2004-8-28" ;
+       :AlunoNome "DIOGO PAULO DA FONTE LAPA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38167 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS22 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS22" ;
+       :AlunoId "A38167" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "2002-7-20" ;
+       :AlunoNome "DUARTE ALEXANDRE DA CUNHA ALVES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33155 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS1 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS1" ;
+       :AlunoId "A33155" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "2002-4-2" ;
+       :AlunoNome "DUARTE FILIPE AFONSO CHAVES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35298 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB3 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB3" ;
+       :AlunoId "A35298" ;
+       :AlunoInstrumento "Corne Inglês" ;
+       :AlunoNasc "1999-5-10" ;
+       :AlunoNome "DUARTE NUNO MALHEIRO DE BARREIRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38190 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS15 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS15" ;
+       :AlunoId "A38190" ;
+       :AlunoInstrumento "Trombone" ;
+       :AlunoNasc "2005-3-14" ;
+       :AlunoNome "ELISEU CARNEIRO DOS SANTOS ROCHA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35300 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB10 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB10" ;
+       :AlunoId "A35300" ;
+       :AlunoInstrumento "Oboé" ;
+       :AlunoNasc "2001-2-15" ;
+       :AlunoNome "EMANUEL CERDEIRA MESQUITA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30305 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS19 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS19" ;
+       :AlunoId "A30305" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "2004-4-15" ;
+       :AlunoNome "EMANUEL JOSE ANTUNES FERNANDES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36757 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS8 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS8" ;
+       :AlunoId "A36757" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "2002-6-6" ;
+       :AlunoNome "ERNESTO MANUEL DA SILVA LOPES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33157 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS1 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS1" ;
+       :AlunoId "A33157" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "2005-1-23" ;
+       :AlunoNome "EURICO MANUEL FOLGADO AFONSO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A27608 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB15 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB15" ;
+       :AlunoId "A27608" ;
+       :AlunoInstrumento "Trombone" ;
+       :AlunoNasc "1999-5-12" ;
+       :AlunoNome "EURICO MANUEL TELES MORAIS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35302 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB11 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB11" ;
+       :AlunoId "A35302" ;
+       :AlunoInstrumento "Orgão" ;
+       :AlunoNasc "1996-8-19" ;
+       :AlunoNome "FABIO ROBERTO LEITE MATOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33158 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS5 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS5" ;
+       :AlunoId "A33158" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "2003-1-11" ;
+       :AlunoNome "FAUSTO MIGUEL PACHECO FARIA VIANA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35465 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB19 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB19" ;
+       :AlunoId "A35465" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "1999-2-21" ;
+       :AlunoNome "FERNANDO ANTONIO ALVES LOPES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33858 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB13 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB13" ;
+       :AlunoId "A33858" ;
+       :AlunoInstrumento "Piano" ;
+       :AlunoNasc "1999-7-13" ;
+       :AlunoNome "FERNANDO JORGE PINTO LIMA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A26737 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS16 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS16" ;
+       :AlunoId "A26737" ;
+       :AlunoInstrumento "Trompa" ;
+       :AlunoNasc "2005-7-26" ;
+       :AlunoNome "FERNANDO MIGUEL SOUSA LISBOA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30187 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS9 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS9" ;
+       :AlunoId "A30187" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "2005-1-26" ;
+       :AlunoNome "FERNANDO SERGIO MADALENO PEREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35303 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB1 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB1" ;
+       :AlunoId "A35303" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "1999-5-8" ;
+       :AlunoNome "FILIPE ANTONIO GONCALVES DA SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36445 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB22 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB22" ;
+       :AlunoId "A36445" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "2001-9-25" ;
+       :AlunoNome "FILIPE BARROSO DE OLIVEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38595 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB2 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB2" ;
+       :AlunoId "A38595" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "1999-4-2" ;
+       :AlunoNome "FILIPE GONCALO GONCALVES DA COSTA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38187 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB10 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB10" ;
+       :AlunoId "A38187" ;
+       :AlunoInstrumento "Oboé" ;
+       :AlunoNasc "1996-6-19" ;
+       :AlunoNome "FLAVIO MIGUEL XAVIER FERREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36424 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB11 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB11" ;
+       :AlunoId "A36424" ;
+       :AlunoInstrumento "Orgão" ;
+       :AlunoNasc "2001-5-14" ;
+       :AlunoNome "FRANCISCO EURICO PINTO CORTEZ MARTINS LEITE" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35308 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB21 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB21" ;
+       :AlunoId "A35308" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "1996-6-2" ;
+       :AlunoNome "FRANCISCO JOSE MAIO LEITE" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35443 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS22 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS22" ;
+       :AlunoId "A35443" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "2002-4-6" ;
+       :AlunoNome "FRANCISCO JOSE MARTINS GOMES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A27616 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB21 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB21" ;
+       :AlunoId "A27616" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "1996-7-3" ;
+       :AlunoNome "FRANCISCO JOSE PRATA DA PAZ" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38163 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB2 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB2" ;
+       :AlunoId "A38163" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "1996-4-23" ;
+       :AlunoNome "GASPAR AUGUSTO SIMOES CORREIA VIEIRA LEITE" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39288 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS15 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS15" ;
+       :AlunoId "A39288" ;
+       :AlunoInstrumento "Trombone" ;
+       :AlunoNasc "2005-2-22" ;
+       :AlunoNome "GENILDO SOARES NEVES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33162 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS5 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS5" ;
+       :AlunoId "A33162" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "2003-3-25" ;
+       :AlunoNome "GONCALO LEAL MACHADO RIBEIRO PINTO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35311 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS22 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS22" ;
+       :AlunoId "A35311" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "2005-3-5" ;
+       :AlunoNome "GONCALO LUIS MALHEIRO DE OLIVEIRA NOVAIS MACHADO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39508 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS5 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS5" ;
+       :AlunoId "A39508" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "2005-8-15" ;
+       :AlunoNome "GONCALO MANUEL CORREIA CALHEIROS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33163 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS21 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS21" ;
+       :AlunoId "A33163" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "2004-4-6" ;
+       :AlunoNome "GONCALO PAULO CUNHA CARDOSO FERREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38174 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS12 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS12" ;
+       :AlunoId "A38174" ;
+       :AlunoInstrumento "Percussão" ;
+       :AlunoNasc "2003-12-14" ;
+       :AlunoNome "GUILHERME REIS BARBOSA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33165 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS13 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS13" ;
+       :AlunoId "A33165" ;
+       :AlunoInstrumento "Piano" ;
+       :AlunoNasc "2004-7-5" ;
+       :AlunoNome "HELDER ARTUR PEIXOTO MAGALHAES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35312 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS13 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS13" ;
+       :AlunoId "A35312" ;
+       :AlunoInstrumento "Piano" ;
+       :AlunoNasc "2002-4-11" ;
+       :AlunoNome "HELDER FILIPE DE CASTRO MARQUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38185 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB6 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB6" ;
+       :AlunoId "A38185" ;
+       :AlunoInstrumento "Flauta" ;
+       :AlunoNasc "1996-6-21" ;
+       :AlunoNome "HELDER JOSE FERREIRA BARBOSA RIBEIRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39503 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS10 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS10" ;
+       :AlunoId "A39503" ;
+       :AlunoInstrumento "Oboé" ;
+       :AlunoNasc "2005-3-4" ;
+       :AlunoNome "HELDER NUNO MARTINS DO VALE TOME" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36758 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS21 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS21" ;
+       :AlunoId "A36758" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "2003-4-20" ;
+       :AlunoNome "HUGO ALEXANDRE PEREIRA TRIUNFANTE MARTINS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38197 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS8 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS8" ;
+       :AlunoId "A38197" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "2004-8-6" ;
+       :AlunoNome "HUGO ALEXANDRE SOBREIRO DE SEIXAS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33272 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB9 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB9" ;
+       :AlunoId "A33272" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "1998-2-21" ;
+       :AlunoNome "HUGO ANDRE PEIXOTO FREITAS PEREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35315 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS6 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS6" ;
+       :AlunoId "A35315" ;
+       :AlunoInstrumento "Flauta" ;
+       :AlunoNasc "2004-1-28" ;
+       :AlunoNome "HUGO EMANUEL QUEIROS TEIXEIRA DA SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38202 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB6 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB6" ;
+       :AlunoId "A38202" ;
+       :AlunoInstrumento "Flauta" ;
+       :AlunoNasc "2000-4-4" ;
+       :AlunoNome "HUGO FILIPE NASCIMENTO PEREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35316 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB15 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB15" ;
+       :AlunoId "A35316" ;
+       :AlunoInstrumento "Trombone" ;
+       :AlunoNasc "2001-2-21" ;
+       :AlunoNome "HUGO GUILHERME DOS SANTOS RIGOR" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35395 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB20 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB20" ;
+       :AlunoId "A35395" ;
+       :AlunoInstrumento "Violino" ;
+       :AlunoNasc "1997-6-25" ;
+       :AlunoNome "HUGO JOSE FERNANDES CARVALHO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38204 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB7 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB7" ;
+       :AlunoId "A38204" ;
+       :AlunoInstrumento "Fliscorne" ;
+       :AlunoNasc "1997-10-2" ;
+       :AlunoNome "HUGO JOSE PEREIRA PACHECO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A26208 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB22 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB22" ;
+       :AlunoId "A26208" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "1998-7-8" ;
+       :AlunoNome "IGOR MURILO DE ALMEIDA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33703 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB22 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB22" ;
+       :AlunoId "A33703" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "1996-10-28" ;
+       :AlunoNome "ISABEL MARIA ROSENDO CARDOSO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38134 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS17 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS17" ;
+       :AlunoId "A38134" ;
+       :AlunoInstrumento "Trompete" ;
+       :AlunoNasc "2002-6-10" ;
+       :AlunoNome "IVO MANUEL DANTAS MONTEIRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35318 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS14 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS14" ;
+       :AlunoId "A35318" ;
+       :AlunoInstrumento "Saxofone" ;
+       :AlunoNasc "2004-4-25" ;
+       :AlunoNome "JASON PETER COSTA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33168 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB9 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB9" ;
+       :AlunoId "A33168" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "2000-10-13" ;
+       :AlunoNome "JOANA SOUTO DE MIRANDA GONZALEZ" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35319 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS19 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS19" ;
+       :AlunoId "A35319" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "2004-6-12" ;
+       :AlunoNome "JOAO ALEXANDRE VAZ OLIVEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35320 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB19 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB19" ;
+       :AlunoId "A35320" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "2001-2-9" ;
+       :AlunoNome "JOAO ANTONIO LAVRADOR VILANOVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A32753 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB5 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB5" ;
+       :AlunoId "A32753" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "1998-11-26" ;
+       :AlunoNome "JOAO ARNALDO FREITAS DE ABREU" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38180 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS7 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS7" ;
+       :AlunoId "A38180" ;
+       :AlunoInstrumento "Fliscorne" ;
+       :AlunoNasc "2005-11-9" ;
+       :AlunoNome "JOAO CARLOS AZEVEDO SALGADO GUIMARAES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35321 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB21 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB21" ;
+       :AlunoId "A35321" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "1996-3-27" ;
+       :AlunoNome "JOAO FILIPE FONTES MACHADO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35322 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS9 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS9" ;
+       :AlunoId "A35322" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "2005-5-17" ;
+       :AlunoNome "JOAO GILBERTO LAMARAO DA SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38133 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB15 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB15" ;
+       :AlunoId "A38133" ;
+       :AlunoInstrumento "Trombone" ;
+       :AlunoNasc "1998-3-7" ;
+       :AlunoNome "JOAO GONCALO BOTICA RIBEIRO DA SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30201 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS7 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS7" ;
+       :AlunoId "A30201" ;
+       :AlunoInstrumento "Fliscorne" ;
+       :AlunoNasc "2005-3-5" ;
+       :AlunoNome "JOAO GUILHERME RABACA CAMPOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38123 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB3 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB3" ;
+       :AlunoId "A38123" ;
+       :AlunoInstrumento "Corne Inglês" ;
+       :AlunoNasc "1998-7-26" ;
+       :AlunoNome "JOAO MANUEL DA SILVA SANCHES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A34935 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS1 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS1" ;
+       :AlunoId "A34935" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "2003-2-17" ;
+       :AlunoNome "JOAO MANUEL DE CAMPOS GONCALVES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35323 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB4 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB4" ;
+       :AlunoId "A35323" ;
+       :AlunoInstrumento "Eufónio" ;
+       :AlunoNasc "1998-1-16" ;
+       :AlunoNome "JOAO MARIO MENDES DE OLIVEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33172 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB21 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB21" ;
+       :AlunoId "A33172" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "1999-2-11" ;
+       :AlunoNome "JOAO MIGUEL RAPOSO DA SILVA MARQUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38191 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB8 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB8" ;
+       :AlunoId "A38191" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "1997-3-21" ;
+       :AlunoNome "JOAO MIGUEL RODRIGUES BATISTA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38186 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS22 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS22" ;
+       :AlunoId "A38186" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "2003-5-3" ;
+       :AlunoNome "JOAO NUNO MARQUES DOS SANTOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39750 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB2 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB2" ;
+       :AlunoId "A39750" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "1997-3-5" ;
+       :AlunoNome "JOAO PAULO BARBOSA OLIVEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A22662 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS12 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS12" ;
+       :AlunoId "A22662" ;
+       :AlunoInstrumento "Percussão" ;
+       :AlunoNasc "2005-10-12" ;
+       :AlunoNome "JOAO PAULO CARRAPATO ALMEIDA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35325 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS9 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS9" ;
+       :AlunoId "A35325" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "2004-9-25" ;
+       :AlunoNome "JOAO PAULO COELHO GOMES TEIXEIRA E OLIVEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A17855 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS5 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS5" ;
+       :AlunoId "A17855" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "2004-9-1" ;
+       :AlunoNome "JOAO PAULO DA SILVA CASTRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38175 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB6 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB6" ;
+       :AlunoId "A38175" ;
+       :AlunoInstrumento "Flauta" ;
+       :AlunoNasc "2001-5-26" ;
+       :AlunoNome "JOAO PAULO DA SILVA GOMES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33173 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS20 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS20" ;
+       :AlunoId "A33173" ;
+       :AlunoInstrumento "Violino" ;
+       :AlunoNasc "2003-1-2" ;
+       :AlunoNome "JOAO PAULO MINHAVA PEIXOTO ASSIS CARDOSO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39622 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS19 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS19" ;
+       :AlunoId "A39622" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "2002-1-6" ;
+       :AlunoNome "JOAO PAULO SILVA DE VASCONCELOS GUSMAO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33175 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB22 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB22" ;
+       :AlunoId "A33175" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "2001-10-25" ;
+       :AlunoNome "JOAO PEDRO BACAO COELHO DE BARROS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A18938 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS13 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS13" ;
+       :AlunoId "A18938" ;
+       :AlunoInstrumento "Piano" ;
+       :AlunoNasc "2003-10-28" ;
+       :AlunoNome "JOAO PEDRO BRITO ANTUNES GUIMARAES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33176 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS20 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS20" ;
+       :AlunoId "A33176" ;
+       :AlunoInstrumento "Violino" ;
+       :AlunoNasc "2004-6-26" ;
+       :AlunoNome "JOAO PEDRO GOMES FERNANDES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35832 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS12 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS12" ;
+       :AlunoId "A35832" ;
+       :AlunoInstrumento "Percussão" ;
+       :AlunoNasc "2002-5-1" ;
+       :AlunoNome "JOAO PEDRO GONCALVES DE CARVALHO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38170 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS17 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS17" ;
+       :AlunoId "A38170" ;
+       :AlunoInstrumento "Trompete" ;
+       :AlunoNasc "2003-4-19" ;
+       :AlunoNome "JOAO PEDRO OLIVEIRA PEREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36425 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS20 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS20" ;
+       :AlunoId "A36425" ;
+       :AlunoInstrumento "Violino" ;
+       :AlunoNasc "2002-6-6" ;
+       :AlunoNome "JOAO PEDRO ROBALO ESPINHO PEREIRA DA SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38212 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB4 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB4" ;
+       :AlunoId "A38212" ;
+       :AlunoInstrumento "Eufónio" ;
+       :AlunoNasc "1998-5-3" ;
+       :AlunoNome "JOAO PEDRO SILVA ARAUJO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38220 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB8 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB8" ;
+       :AlunoId "A38220" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "1999-11-4" ;
+       :AlunoNome "JOAO RAFAEL FERREIRA VELOSO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38199 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB5 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB5" ;
+       :AlunoId "A38199" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "1999-3-26" ;
+       :AlunoNome "JOAO RICARDO DA SILVA CAMPOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38198 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB14 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB14" ;
+       :AlunoId "A38198" ;
+       :AlunoInstrumento "Saxofone" ;
+       :AlunoNasc "2001-10-15" ;
+       :AlunoNome "JOAQUIM MACHADO GONCALVES SAMPAIO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35328 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB19 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB19" ;
+       :AlunoId "A35328" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "1997-4-17" ;
+       :AlunoNome "JOEL ARAUJO ROCHA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38157 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS21 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS21" ;
+       :AlunoId "A38157" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "2003-7-15" ;
+       :AlunoNome "JOEL HUMBERTO DA SILVA BEIRAO DO VALE CARVALHO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A20464 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS21 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS21" ;
+       :AlunoId "A20464" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "2004-3-22" ;
+       :AlunoNome "JOEL TITO DA CRUZ PINTO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38139 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB7 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB7" ;
+       :AlunoId "A38139" ;
+       :AlunoInstrumento "Fliscorne" ;
+       :AlunoNasc "1997-4-7" ;
+       :AlunoNome "JORGE ALBERTO FARIA MIRANDA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35330 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS13 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS13" ;
+       :AlunoId "A35330" ;
+       :AlunoInstrumento "Piano" ;
+       :AlunoNasc "2002-8-24" ;
+       :AlunoNome "JORGE ANDRE ALVES DE MELO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A16409 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS10 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS10" ;
+       :AlunoId "A16409" ;
+       :AlunoInstrumento "Oboé" ;
+       :AlunoNasc "2005-2-18" ;
+       :AlunoNome "JORGE MANUEL DE CASTRO MAIO GOMES DA COSTA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33709 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS12 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS12" ;
+       :AlunoId "A33709" ;
+       :AlunoInstrumento "Percussão" ;
+       :AlunoNasc "2005-8-2" ;
+       :AlunoNome "JORGE MANUEL VIANA RIBEIRO MARTINS FORTE" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30209 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB15 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB15" ;
+       :AlunoId "A30209" ;
+       :AlunoInstrumento "Trombone" ;
+       :AlunoNasc "1997-4-26" ;
+       :AlunoNome "JORGE MIGUEL GONCALVES DA SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A21008 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB2 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB2" ;
+       :AlunoId "A21008" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "1998-6-11" ;
+       :AlunoNome "JORGE MIGUEL SILVA MELO PEREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35331 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS22 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS22" ;
+       :AlunoId "A35331" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "2003-3-20" ;
+       :AlunoNome "JOSE ALEXANDRE DE CARVALHO AMORIM" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38189 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB3 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB3" ;
+       :AlunoId "A38189" ;
+       :AlunoInstrumento "Corne Inglês" ;
+       :AlunoNasc "1998-8-3" ;
+       :AlunoNome "JOSE ANTONIO DA CUNHA E SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A19705 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS11 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS11" ;
+       :AlunoId "A19705" ;
+       :AlunoInstrumento "Orgão" ;
+       :AlunoNasc "2004-1-12" ;
+       :AlunoNome "JOSE ANTONIO PEREIRA CIBRAO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30211 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB5 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB5" ;
+       :AlunoId "A30211" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "1997-6-3" ;
+       :AlunoNome "JOSE CARLOS CARVALHO DOS SANTOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30212 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB10 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB10" ;
+       :AlunoId "A30212" ;
+       :AlunoInstrumento "Oboé" ;
+       :AlunoNasc "2001-4-6" ;
+       :AlunoNome "JOSE CARLOS DA ROCHA MACHADO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36960 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB17 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB17" ;
+       :AlunoId "A36960" ;
+       :AlunoInstrumento "Trompete" ;
+       :AlunoNasc "1999-9-13" ;
+       :AlunoNome "JOSE CARLOS DE FREITAS FONTAO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A34434 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS13 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS13" ;
+       :AlunoId "A34434" ;
+       :AlunoInstrumento "Piano" ;
+       :AlunoNasc "2004-7-1" ;
+       :AlunoNome "JOSE CARLOS MARQUES DIAS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35332 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB13 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB13" ;
+       :AlunoId "A35332" ;
+       :AlunoInstrumento "Piano" ;
+       :AlunoNasc "2001-11-5" ;
+       :AlunoNome "JOSE DIOGO RIBEIRO LIZ DE ALMEIDA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39506 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB18 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB18" ;
+       :AlunoId "A39506" ;
+       :AlunoInstrumento "Tuba" ;
+       :AlunoNasc "1999-6-1" ;
+       :AlunoNome "JOSE EDUARDO CORREIA CALHEIROS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36761 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB14 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB14" ;
+       :AlunoId "A36761" ;
+       :AlunoInstrumento "Saxofone" ;
+       :AlunoNasc "2001-12-11" ;
+       :AlunoNome "JOSE EDUARDO TEIXEIRA RITO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38224 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB12 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB12" ;
+       :AlunoId "A38224" ;
+       :AlunoInstrumento "Percussão" ;
+       :AlunoNasc "1999-2-12" ;
+       :AlunoNome "JOSE FILIPE HENRIQUES VILAS BOAS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35333 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB19 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB19" ;
+       :AlunoId "A35333" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "1999-11-9" ;
+       :AlunoNome "JOSE FILIPE QUEIJO FERNANDES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A23916 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB3 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB3" ;
+       :AlunoId "A23916" ;
+       :AlunoInstrumento "Corne Inglês" ;
+       :AlunoNasc "1997-9-4" ;
+       :AlunoNome "JOSE GRACA DA NOBREGA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38222 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS17 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS17" ;
+       :AlunoId "A38222" ;
+       :AlunoInstrumento "Trompete" ;
+       :AlunoNasc "2002-8-4" ;
+       :AlunoNome "JOSE LUIS CARDOSO SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38205 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB3 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB3" ;
+       :AlunoId "A38205" ;
+       :AlunoInstrumento "Corne Inglês" ;
+       :AlunoNasc "1996-2-19" ;
+       :AlunoNome "JOSE LUIS LOPES DE ARAUJO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A27629 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS22 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS22" ;
+       :AlunoId "A27629" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "2002-8-25" ;
+       :AlunoNome "JOSE LUIS PINTO MONTEIRO ALVES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38206 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS9 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS9" ;
+       :AlunoId "A38206" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "2005-4-11" ;
+       :AlunoNome "JOSE MANUEL ARAUJO SOARES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35398 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS6 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS6" ;
+       :AlunoId "A35398" ;
+       :AlunoInstrumento "Flauta" ;
+       :AlunoNasc "2005-10-19" ;
+       :AlunoNome "JOSE MANUEL ESTEVES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A32480 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB10 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB10" ;
+       :AlunoId "A32480" ;
+       :AlunoInstrumento "Oboé" ;
+       :AlunoNasc "1999-5-10" ;
+       :AlunoNome "JOSE MANUEL LIMA GANDARELA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30213 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB16 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB16" ;
+       :AlunoId "A30213" ;
+       :AlunoInstrumento "Trompa" ;
+       :AlunoNasc "2001-1-4" ;
+       :AlunoNome "JOSE MANUEL LOUREIRO DE AZEVEDO TEIXEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A22670 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB1 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB1" ;
+       :AlunoId "A22670" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "1999-10-28" ;
+       :AlunoNome "JOSE MANUEL TEIXEIRA FERNANDES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33182 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS18 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS18" ;
+       :AlunoId "A33182" ;
+       :AlunoInstrumento "Tuba" ;
+       :AlunoNasc "2005-8-14" ;
+       :AlunoNome "JOSE MIGUEL DOS SANTOS FERRAZ" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A28722 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS3 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS3" ;
+       :AlunoId "A28722" ;
+       :AlunoInstrumento "Corne Inglês" ;
+       :AlunoNasc "2003-10-26" ;
+       :AlunoNome "JOSE MIGUEL FERREIRA PONTES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38121 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS9 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS9" ;
+       :AlunoId "A38121" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "2003-1-26" ;
+       :AlunoNome "JOSE MIGUEL RODRIGUES OLIVEIRA DA SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35334 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB19 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB19" ;
+       :AlunoId "A35334" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "2001-9-20" ;
+       :AlunoNome "JOSE MIGUEL SILVA PEIXOTO DE CARVALHO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38136 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB9 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB9" ;
+       :AlunoId "A38136" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "1998-6-7" ;
+       :AlunoNome "JOSE NUNO MARTINS PINTO FRAGA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35335 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB1 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB1" ;
+       :AlunoId "A35335" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "1996-9-26" ;
+       :AlunoNome "JOSE PAULO CARNEIRO DE MELO MAMEDE" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35337 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS6 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS6" ;
+       :AlunoId "A35337" ;
+       :AlunoInstrumento "Flauta" ;
+       :AlunoNasc "2003-12-11" ;
+       :AlunoNome "JOSE PEDRO DOMINGUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38142 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB21 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB21" ;
+       :AlunoId "A38142" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "1996-12-15" ;
+       :AlunoNome "JOSE PEDRO FARIA E VASCONCELOS CORREIA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38140 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS14 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS14" ;
+       :AlunoId "A38140" ;
+       :AlunoInstrumento "Saxofone" ;
+       :AlunoNasc "2002-9-5" ;
+       :AlunoNome "JOSE PEDRO MACHADO GOMES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38137 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB5 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB5" ;
+       :AlunoId "A38137" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "2000-2-23" ;
+       :AlunoNome "JOSE PEDRO RIBEIRO DA ARAUJO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38128 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS4 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS4" ;
+       :AlunoId "A38128" ;
+       :AlunoInstrumento "Eufónio" ;
+       :AlunoNasc "2005-6-13" ;
+       :AlunoNome "JOSE PEDRO RODRIGUES MAGALHAES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30214 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB12 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB12" ;
+       :AlunoId "A30214" ;
+       :AlunoInstrumento "Percussão" ;
+       :AlunoNasc "2001-3-15" ;
+       :AlunoNome "JOSE PEDRO SILVA DE OLIVEIRA CARVALHO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A23508 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB15 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB15" ;
+       :AlunoId "A23508" ;
+       :AlunoInstrumento "Trombone" ;
+       :AlunoNasc "1998-4-7" ;
+       :AlunoNome "JOSE ROMEU FERNANDES PINTO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38155 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB12 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB12" ;
+       :AlunoId "A38155" ;
+       :AlunoInstrumento "Percussão" ;
+       :AlunoNasc "1996-9-16" ;
+       :AlunoNome "JULIO ANDRE RODRIGUES ARAUJO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35843 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS19 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS19" ;
+       :AlunoId "A35843" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "2002-3-9" ;
+       :AlunoNome "LARA SOFIA ALPOIM MIRANDA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38150 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB5 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB5" ;
+       :AlunoId "A38150" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "1999-4-27" ;
+       :AlunoNome "LEANDRO EMANUEL DA SILVA SALGADO BARBOSA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A34035 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS9 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS9" ;
+       :AlunoId "A34035" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "2005-2-27" ;
+       :AlunoNome "LEONOR ISABEL CONSTANTINO CAEIRO BOGA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A24839 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS5 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS5" ;
+       :AlunoId "A24839" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "2003-12-16" ;
+       :AlunoNome "LEONOR ISABEL FERREIRA DE MELO OSORIO ARAUJO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35339 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS2 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS2" ;
+       :AlunoId "A35339" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "2004-6-23" ;
+       :AlunoNome "LIDIA NOGUEIRA LARANJEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35340 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB21 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB21" ;
+       :AlunoId "A35340" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "1999-2-22" ;
+       :AlunoNome "LILIANA SOLANGE SEQUEIRA HENRIQUES DE MACEDO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33650 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB16 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB16" ;
+       :AlunoId "A33650" ;
+       :AlunoInstrumento "Trompa" ;
+       :AlunoNasc "2000-7-24" ;
+       :AlunoNome "LUIS ANDRE DA CUNHA MARQUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35342 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS14 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS14" ;
+       :AlunoId "A35342" ;
+       :AlunoInstrumento "Saxofone" ;
+       :AlunoNasc "2002-2-20" ;
+       :AlunoNome "LUIS CARLOS GONCALO LEONARDO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38223 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB3 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB3" ;
+       :AlunoId "A38223" ;
+       :AlunoInstrumento "Corne Inglês" ;
+       :AlunoNasc "1998-8-13" ;
+       :AlunoNome "LUIS DIOGO MONTEIRO DUARTE COUTO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39341 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS8 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS8" ;
+       :AlunoId "A39341" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "2003-11-28" ;
+       :AlunoNome "LUIS FERNANDO ROMANEL RODRIGUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39408 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB7 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB7" ;
+       :AlunoId "A39408" ;
+       :AlunoInstrumento "Fliscorne" ;
+       :AlunoNasc "2000-3-16" ;
+       :AlunoNome "LUIS FILIPE FARIA MONTEIRO CAPELO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33186 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS10 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS10" ;
+       :AlunoId "A33186" ;
+       :AlunoInstrumento "Oboé" ;
+       :AlunoNasc "2002-8-10" ;
+       :AlunoNome "LUIS FILIPE GAMA PAIS CABRAL" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38219 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS18 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS18" ;
+       :AlunoId "A38219" ;
+       :AlunoInstrumento "Tuba" ;
+       :AlunoNasc "2005-11-4" ;
+       :AlunoNome "LUIS FILIPE PEREIRA GONCALVES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A29631 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB5 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB5" ;
+       :AlunoId "A29631" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "2001-6-19" ;
+       :AlunoNome "LUIS FILIPE RIBEIRO NOVAIS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39747 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS10 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS10" ;
+       :AlunoId "A39747" ;
+       :AlunoInstrumento "Oboé" ;
+       :AlunoNasc "2005-5-19" ;
+       :AlunoNome "LUIS PEDRO FERREIRA LEITE DOS SANTOS ALEIXO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33188 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS15 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS15" ;
+       :AlunoId "A33188" ;
+       :AlunoInstrumento "Trombone" ;
+       :AlunoNasc "2002-3-12" ;
+       :AlunoNome "LUIS PEDRO LOPES PEREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38172 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB1 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB1" ;
+       :AlunoId "A38172" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "2000-2-21" ;
+       :AlunoNome "LUIS TIAGO AFONSO MASCARENHAS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38168 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS8 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS8" ;
+       :AlunoId "A38168" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "2005-8-2" ;
+       :AlunoNome "LUIZ ALBERTO DE CASTRO SANTOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38254 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB16 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB16" ;
+       :AlunoId "A38254" ;
+       :AlunoInstrumento "Trompa" ;
+       :AlunoNasc "2001-4-27" ;
+       :AlunoNome "MANUEL DOMINGOS DE CARVALHO FELGUEIRAS DA SILVA SANTOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30219 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB4 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB4" ;
+       :AlunoId "A30219" ;
+       :AlunoInstrumento "Eufónio" ;
+       :AlunoNasc "2001-3-16" ;
+       :AlunoNome "MANUEL FERNANDO SOTO MAIOR FRANQUEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35348 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS8 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS8" ;
+       :AlunoId "A35348" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "2002-2-24" ;
+       :AlunoNome "MANUEL JOSE GOMES MEIRELES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A27637 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB18 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB18" ;
+       :AlunoId "A27637" ;
+       :AlunoInstrumento "Tuba" ;
+       :AlunoNasc "1999-12-22" ;
+       :AlunoNome "MANUEL JOSE TORRES SOUSA DA CUNHA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A29004 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB1 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB1" ;
+       :AlunoId "A29004" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "1999-4-22" ;
+       :AlunoNome "MARANGAZE JOAQUIM MUNHEPE MULHANGA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35349 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB6 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB6" ;
+       :AlunoId "A35349" ;
+       :AlunoInstrumento "Flauta" ;
+       :AlunoNasc "1997-1-26" ;
+       :AlunoNome "MARCIA MARLENE DE ALMEIDA MARTINS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35350 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB22 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB22" ;
+       :AlunoId "A35350" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "1996-11-20" ;
+       :AlunoNome "MARCIAL COELHO GOMES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39406 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS8 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS8" ;
+       :AlunoId "A39406" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "2003-6-22" ;
+       :AlunoNome "MARCO ALEXANDRE AGUIAR VAZ" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A29011 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB2 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB2" ;
+       :AlunoId "A29011" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "1998-12-22" ;
+       :AlunoNome "MARCO ALEXANDRE BARREIRA MEDEIROS TEIXEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38178 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB2 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB2" ;
+       :AlunoId "A38178" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "1999-6-9" ;
+       :AlunoNome "MARCO ALEXANDRE TEIXEIRA PALOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38152 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS16 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS16" ;
+       :AlunoId "A38152" ;
+       :AlunoInstrumento "Trompa" ;
+       :AlunoNasc "2005-5-14" ;
+       :AlunoNome "MARCO ANTONIO SAMPAIO FREITAS DE CASTRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38179 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS15 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS15" ;
+       :AlunoId "A38179" ;
+       :AlunoInstrumento "Trombone" ;
+       :AlunoNasc "2003-11-13" ;
+       :AlunoNome "MARCO ANTONIO TEIXEIRA MARTINS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A22685 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS12 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS12" ;
+       :AlunoId "A22685" ;
+       :AlunoInstrumento "Percussão" ;
+       :AlunoNasc "2004-8-28" ;
+       :AlunoNome "MARCO FRANCISCO DA SILVA LIZARDO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A22688 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB8 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB8" ;
+       :AlunoId "A22688" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "2001-4-3" ;
+       :AlunoNome "MARCO RICARDO BARBOSA COELHO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36864 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS11 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS11" ;
+       :AlunoId "A36864" ;
+       :AlunoInstrumento "Orgão" ;
+       :AlunoNasc "2003-7-19" ;
+       :AlunoNome "MARIA BEATRIZ ALVES DE SA CAMPOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38184 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS7 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS7" ;
+       :AlunoId "A38184" ;
+       :AlunoInstrumento "Fliscorne" ;
+       :AlunoNasc "2005-10-1" ;
+       :AlunoNome "MARIA CRISTINA CARNEIRO BARREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A12753 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB16 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB16" ;
+       :AlunoId "A12753" ;
+       :AlunoInstrumento "Trompa" ;
+       :AlunoNasc "1998-3-8" ;
+       :AlunoNome "MARIA LUISA VILLAVERDE MACHADO FERNANDES NOVAIS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38161 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS4 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS4" ;
+       :AlunoId "A38161" ;
+       :AlunoInstrumento "Eufónio" ;
+       :AlunoNasc "2002-6-24" ;
+       :AlunoNome "MARIANA PEREIRA NEVES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38171 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS22 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS22" ;
+       :AlunoId "A38171" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "2005-12-22" ;
+       :AlunoNome "MARIO ANDRE PATRICIO TEIXEIRA JULIO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38194 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB11 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB11" ;
+       :AlunoId "A38194" ;
+       :AlunoInstrumento "Orgão" ;
+       :AlunoNasc "1999-7-23" ;
+       :AlunoNome "MARIO DA FONTE LAMEIRAS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A23544 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB3 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB3" ;
+       :AlunoId "A23544" ;
+       :AlunoInstrumento "Corne Inglês" ;
+       :AlunoNasc "2000-3-12" ;
+       :AlunoNome "MARIO RUI ANUNCIACAO MONTEIRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A29048 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB2 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB2" ;
+       :AlunoId "A29048" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "1996-2-14" ;
+       :AlunoNome "MARIO RUI RIBEIRO FIALHO DA CONCEICAO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36454 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB15 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB15" ;
+       :AlunoId "A36454" ;
+       :AlunoInstrumento "Trombone" ;
+       :AlunoNasc "1999-4-17" ;
+       :AlunoNome "MICHEL FERREIRA PINTO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35352 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB8 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB8" ;
+       :AlunoId "A35352" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "2001-4-14" ;
+       :AlunoNome "MIGUEL AFONSO PIRES DA ROSA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38217 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB8 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB8" ;
+       :AlunoId "A38217" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "2001-4-13" ;
+       :AlunoNome "MIGUEL ANGELO MARQUES DE MATOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38209 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS17 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS17" ;
+       :AlunoId "A38209" ;
+       :AlunoInstrumento "Trompete" ;
+       :AlunoNasc "2005-9-24" ;
+       :AlunoNome "MIGUEL ANGELO PINTO MARQUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30226 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS3 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS3" ;
+       :AlunoId "A30226" ;
+       :AlunoInstrumento "Corne Inglês" ;
+       :AlunoNasc "2002-3-12" ;
+       :AlunoNome "MIGUEL ANGELO RIBEIRO DE SOUSA E SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38221 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB13 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB13" ;
+       :AlunoId "A38221" ;
+       :AlunoInstrumento "Piano" ;
+       :AlunoNasc "1996-2-13" ;
+       :AlunoNome "MIGUEL ANGELO VIVAS GOMES ALVES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A21432 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS9 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS9" ;
+       :AlunoId "A21432" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "2004-12-14" ;
+       :AlunoNome "MIGUEL MANUEL GOMES RODRIGUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39342 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB22 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB22" ;
+       :AlunoId "A39342" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "2001-11-27" ;
+       :AlunoNome "MIGUEL PEDRO AMARAL FIGUEIREDO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A32608 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB19 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB19" ;
+       :AlunoId "A32608" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "2000-7-17" ;
+       :AlunoNome "MIGUEL PEDRO DE ALMEIDA FERREIRA CORREIA DOURADO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33195 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS16 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS16" ;
+       :AlunoId "A33195" ;
+       :AlunoInstrumento "Trompa" ;
+       :AlunoNasc "2004-10-18" ;
+       :AlunoNome "MIGUEL PINTO DE SOUSA MARQUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A22695 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS5 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS5" ;
+       :AlunoId "A22695" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "2004-6-23" ;
+       :AlunoNome "NANCY DO SAMEIRO SILVERIO LAVANDEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38216 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB13 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB13" ;
+       :AlunoId "A38216" ;
+       :AlunoInstrumento "Piano" ;
+       :AlunoNasc "1997-4-19" ;
+       :AlunoNome "NELSON DE SOUSA E SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33196 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS8 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS8" ;
+       :AlunoId "A33196" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "2004-5-24" ;
+       :AlunoNome "NELSON FILIPE COELHO DE MOURA SOUSA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33420 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB9 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB9" ;
+       :AlunoId "A33420" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "2000-11-19" ;
+       :AlunoNome "NELSON LEANDRO BARBOSA CARNEIRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38195 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS12 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS12" ;
+       :AlunoId "A38195" ;
+       :AlunoInstrumento "Percussão" ;
+       :AlunoNasc "2005-10-12" ;
+       :AlunoNome "NELSON TAVARES CUNHA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33727 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB21 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB21" ;
+       :AlunoId "A33727" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "1999-5-13" ;
+       :AlunoNome "NUNO FILIPE ANTUNES DA SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33127 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB19 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB19" ;
+       :AlunoId "A33127" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "1996-10-16" ;
+       :AlunoNome "NUNO FILIPE MAGALHAES SANTOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A24784 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB17 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB17" ;
+       :AlunoId "A24784" ;
+       :AlunoInstrumento "Trompete" ;
+       :AlunoNasc "1996-12-9" ;
+       :AlunoNome "NUNO FILIPE MARQUES MOREIRA RIBEIRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38208 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB1 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB1" ;
+       :AlunoId "A38208" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "1997-8-27" ;
+       :AlunoNome "NUNO GONCALO BETTENCOURT DA CRUZ CORREIA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38203 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS9 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS9" ;
+       :AlunoId "A38203" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "2003-6-23" ;
+       :AlunoNome "NUNO JORGE FERREIRA GUIMARAES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A15619 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS2 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS2" ;
+       :AlunoId "A15619" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "2002-5-18" ;
+       :AlunoNome "NUNO MIGUEL AFONSO CARVALHO DE MOURA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35355 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB16 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB16" ;
+       :AlunoId "A35355" ;
+       :AlunoInstrumento "Trompa" ;
+       :AlunoNasc "1998-5-8" ;
+       :AlunoNome "NUNO MIGUEL MACHADO ALVES COSTA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33437 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB22 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB22" ;
+       :AlunoId "A33437" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "2000-10-3" ;
+       :AlunoNome "NUNO MIGUEL MARQUES GOMES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A22701 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB9 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB9" ;
+       :AlunoId "A22701" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "1996-1-17" ;
+       :AlunoNome "NUNO MIGUEL MARTINS CASANOVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A27645 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB3 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB3" ;
+       :AlunoId "A27645" ;
+       :AlunoInstrumento "Corne Inglês" ;
+       :AlunoNasc "1997-7-13" ;
+       :AlunoNome "NUNO MIGUEL OLIVEIRA SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A29282 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB4 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB4" ;
+       :AlunoId "A29282" ;
+       :AlunoInstrumento "Eufónio" ;
+       :AlunoNasc "1999-11-1" ;
+       :AlunoNome "NUNO VIRIATO MACEDO FERREIRA DE CARVALHO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38120 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS11 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS11" ;
+       :AlunoId "A38120" ;
+       :AlunoInstrumento "Orgão" ;
+       :AlunoNasc "2004-10-17" ;
+       :AlunoNome "OCTAVIO DAVID DA CONCEICAO JACINTO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A14539 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB16 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB16" ;
+       :AlunoId "A14539" ;
+       :AlunoInstrumento "Trompa" ;
+       :AlunoNasc "2000-10-6" ;
+       :AlunoNome "ORLANDO JORGE GONCALVES PINTO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33280 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB14 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB14" ;
+       :AlunoId "A33280" ;
+       :AlunoInstrumento "Saxofone" ;
+       :AlunoNasc "2001-2-7" ;
+       :AlunoNome "PAULO BRUNO DA SILVA VIDES FERNANDES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A34508 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS9 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS9" ;
+       :AlunoId "A34508" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "2004-9-6" ;
+       :AlunoNome "PAULO CESAR ALMEIDA DE SA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A27577 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB11 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB11" ;
+       :AlunoId "A27577" ;
+       :AlunoInstrumento "Orgão" ;
+       :AlunoNasc "1996-7-18" ;
+       :AlunoNome "PAULO CESAR DE CARVALHO LOPES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39938 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB5 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB5" ;
+       :AlunoId "A39938" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "1997-11-15" ;
+       :AlunoNome "PAULO CESAR ROMANEL RODRIGUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33204 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS8 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS8" ;
+       :AlunoId "A33204" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "2003-2-23" ;
+       :AlunoNome "PAULO EDUARDO MIRANDA CAMPOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38122 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS19 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS19" ;
+       :AlunoId "A38122" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "2002-10-10" ;
+       :AlunoNome "PAULO JORGE ASSIS DE SOUSA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35357 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS2 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS2" ;
+       :AlunoId "A35357" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "2004-5-18" ;
+       :AlunoNome "PAULO JORGE FERNANDES DE SOUSA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30238 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS21 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS21" ;
+       :AlunoId "A30238" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "2003-11-21" ;
+       :AlunoNome "PAULO JORGE SOARES MENDES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39407 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS10 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS10" ;
+       :AlunoId "A39407" ;
+       :AlunoInstrumento "Oboé" ;
+       :AlunoNasc "2003-12-24" ;
+       :AlunoNome "PAULO MANUEL RIBEIRO NOVAIS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33209 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB1 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB1" ;
+       :AlunoId "A33209" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "2001-8-7" ;
+       :AlunoNome "PAULO MIGUEL SA MORAIS PIRES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36476 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB1 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB1" ;
+       :AlunoId "A36476" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "1998-10-27" ;
+       :AlunoNome "PEDRO ALEXANDRE FERREIRA VILACA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35360 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB20 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB20" ;
+       :AlunoId "A35360" ;
+       :AlunoInstrumento "Violino" ;
+       :AlunoNasc "2001-9-24" ;
+       :AlunoNome "PEDRO DANIEL FERREIRA DE CARVALHO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A21711 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB21 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB21" ;
+       :AlunoId "A21711" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "1999-9-27" ;
+       :AlunoNome "PEDRO DAVID ALVES MARTINHO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A32652 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS15 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS15" ;
+       :AlunoId "A32652" ;
+       :AlunoInstrumento "Trombone" ;
+       :AlunoNasc "2005-9-18" ;
+       :AlunoNome "PEDRO DUARTE CARDOSO LOPES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36969 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS17 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS17" ;
+       :AlunoId "A36969" ;
+       :AlunoInstrumento "Trompete" ;
+       :AlunoNasc "2005-6-16" ;
+       :AlunoNome "PEDRO EMANUEL FERNANDES LOPES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33213 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS6 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS6" ;
+       :AlunoId "A33213" ;
+       :AlunoInstrumento "Flauta" ;
+       :AlunoNasc "2005-4-14" ;
+       :AlunoNome "PEDRO GUIMARAES DE FREITAS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30241 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB6 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB6" ;
+       :AlunoId "A30241" ;
+       :AlunoInstrumento "Flauta" ;
+       :AlunoNasc "1999-6-1" ;
+       :AlunoNome "PEDRO HENRIQUE GONCALVES GERAZ RODRIGUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33214 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB21 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB21" ;
+       :AlunoId "A33214" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "1996-10-6" ;
+       :AlunoNome "PEDRO JORGE OSORIO MARINHO OLIVEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38116 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS16 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS16" ;
+       :AlunoId "A38116" ;
+       :AlunoInstrumento "Trompa" ;
+       :AlunoNasc "2003-3-11" ;
+       :AlunoNome "PEDRO JOSE MARTINS FARIA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35144 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB17 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB17" ;
+       :AlunoId "A35144" ;
+       :AlunoInstrumento "Trompete" ;
+       :AlunoNasc "1997-8-25" ;
+       :AlunoNome "PEDRO MANUEL DE AMORIM MAGALHAES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38118 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB1 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB1" ;
+       :AlunoId "A38118" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "2000-9-21" ;
+       :AlunoNome "PEDRO MANUEL LOPES PATRICIO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A27658 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS3 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS3" ;
+       :AlunoId "A27658" ;
+       :AlunoInstrumento "Corne Inglês" ;
+       :AlunoNasc "2002-1-20" ;
+       :AlunoNome "PEDRO MIGUEL ARAUJO MOTA LOPES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38159 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS1 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS1" ;
+       :AlunoId "A38159" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "2005-6-21" ;
+       :AlunoNome "PEDRO MIGUEL AZEVEDO DE OLIVEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35363 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB11 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB11" ;
+       :AlunoId "A35363" ;
+       :AlunoInstrumento "Orgão" ;
+       :AlunoNasc "1998-2-14" ;
+       :AlunoNome "PEDRO MIGUEL DA SILVA ARAUJO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A25383 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB12 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB12" ;
+       :AlunoId "A25383" ;
+       :AlunoInstrumento "Percussão" ;
+       :AlunoNasc "1997-3-8" ;
+       :AlunoNome "PEDRO MIGUEL MARTINS FERNANDES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35364 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB7 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB7" ;
+       :AlunoId "A35364" ;
+       :AlunoInstrumento "Fliscorne" ;
+       :AlunoNasc "2000-8-16" ;
+       :AlunoNome "PEDRO MIGUEL MEIRA DAS NEVES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33524 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS13 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS13" ;
+       :AlunoId "A33524" ;
+       :AlunoInstrumento "Piano" ;
+       :AlunoNasc "2004-10-3" ;
+       :AlunoNome "PEDRO MIGUEL PAES MACHADO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35855 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB6 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB6" ;
+       :AlunoId "A35855" ;
+       :AlunoInstrumento "Flauta" ;
+       :AlunoNasc "2001-3-24" ;
+       :AlunoNome "PEDRO MIGUEL PINTO RIBEIRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38147 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB19 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB19" ;
+       :AlunoId "A38147" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "1997-3-22" ;
+       :AlunoNome "PEDRO MIGUEL RAMOS MADEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33281 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB22 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB22" ;
+       :AlunoId "A33281" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "2000-2-11" ;
+       :AlunoNome "PEDRO MIGUEL SOARES PINTO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30243 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB15 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB15" ;
+       :AlunoId "A30243" ;
+       :AlunoInstrumento "Trombone" ;
+       :AlunoNasc "1999-2-24" ;
+       :AlunoNome "PEDRO MIGUEL VEIGA DA SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38149 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS8 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS8" ;
+       :AlunoId "A38149" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "2003-2-8" ;
+       :AlunoNome "PEDRO SILVESTRE MENESES MAGALHAES COELHO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38160 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS17 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS17" ;
+       :AlunoId "A38160" ;
+       :AlunoInstrumento "Trompete" ;
+       :AlunoNasc "2002-3-7" ;
+       :AlunoNome "PEDRO TIAGO AMORIM DE BRITO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33082 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB20 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB20" ;
+       :AlunoId "A33082" ;
+       :AlunoInstrumento "Violino" ;
+       :AlunoNasc "1996-4-27" ;
+       :AlunoNome "PEDRO TIAGO DIAS GONCALVES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38154 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB2 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB2" ;
+       :AlunoId "A38154" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "1998-1-22" ;
+       :AlunoNome "RAFAEL DE CASTRO CARREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38158 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB9 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB9" ;
+       :AlunoId "A38158" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "1996-7-1" ;
+       :AlunoNome "RAUL GRACIANO OLIVEIRA RODRIGUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30015 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS11 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS11" ;
+       :AlunoId "A30015" ;
+       :AlunoInstrumento "Orgão" ;
+       :AlunoNasc "2002-10-17" ;
+       :AlunoNome "RENATO CESAR ALMEIDA FIGUEIREDO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39509 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB10 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB10" ;
+       :AlunoId "A39509" ;
+       :AlunoInstrumento "Oboé" ;
+       :AlunoNasc "1997-4-17" ;
+       :AlunoNome "RICARDO ANDRE RODRIGUES AFONSO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38153 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB7 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB7" ;
+       :AlunoId "A38153" ;
+       :AlunoInstrumento "Fliscorne" ;
+       :AlunoNasc "1996-2-22" ;
+       :AlunoNome "RICARDO ARAUJO CARVALHO VILACA MOREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38151 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB11 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB11" ;
+       :AlunoId "A38151" ;
+       :AlunoInstrumento "Orgão" ;
+       :AlunoNasc "2001-4-5" ;
+       :AlunoNome "RICARDO FERNANDO LIRA DE MESQUITA LACHADO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38129 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS11 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS11" ;
+       :AlunoId "A38129" ;
+       :AlunoInstrumento "Orgão" ;
+       :AlunoNasc "2003-10-8" ;
+       :AlunoNome "RICARDO GOMES DE FARIA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33222 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB4 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB4" ;
+       :AlunoId "A33222" ;
+       :AlunoInstrumento "Eufónio" ;
+       :AlunoNasc "1997-7-10" ;
+       :AlunoNome "RICARDO JORGE ALMEIDA DE MAGALHAES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38130 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS9 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS9" ;
+       :AlunoId "A38130" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "2004-10-21" ;
+       :AlunoNome "RICARDO JORGE RODRIGUES SEPULVEDA MARQUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A34435 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB18 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB18" ;
+       :AlunoId "A34435" ;
+       :AlunoInstrumento "Tuba" ;
+       :AlunoNasc "1998-8-15" ;
+       :AlunoNome "RICARDO JOSE FERREIRA DIAS DE OLIVEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A19550 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB20 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB20" ;
+       :AlunoId "A19550" ;
+       :AlunoInstrumento "Violino" ;
+       :AlunoNasc "1997-11-5" ;
+       :AlunoNome "RICARDO MANUEL RODRIGUES DE OLIVEIRA DIMAS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35366 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB5 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB5" ;
+       :AlunoId "A35366" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "1996-6-14" ;
+       :AlunoNome "RICARDO MANUEL VIANA MAGALHAES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A22721 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS22 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS22" ;
+       :AlunoId "A22721" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "2003-12-20" ;
+       :AlunoNome "RICARDO NUNO MOREIRA CASTILHO FERREIRA LOPES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30254 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB20 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB20" ;
+       :AlunoId "A30254" ;
+       :AlunoInstrumento "Violino" ;
+       :AlunoNasc "2001-2-27" ;
+       :AlunoNome "ROQUE MANUEL DE CARVALHO TEIXEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A18770 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS14 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS14" ;
+       :AlunoId "A18770" ;
+       :AlunoInstrumento "Saxofone" ;
+       :AlunoNasc "2004-9-2" ;
+       :AlunoNome "ROSA ALEXANDRA AZEVEDO GUIMARAES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38141 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB19 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB19" ;
+       :AlunoId "A38141" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "1999-10-20" ;
+       :AlunoNome "RUBEN FILIPE CARDOSO DA FONSECA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38200 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS20 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS20" ;
+       :AlunoId "A38200" ;
+       :AlunoInstrumento "Violino" ;
+       :AlunoNasc "2003-12-14" ;
+       :AlunoNome "RUI ALEXANDRE SERRANO DE MOURA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36764 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS2 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS2" ;
+       :AlunoId "A36764" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "2002-12-8" ;
+       :AlunoNome "RUI ANDRE FERREIRA SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38135 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB20 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB20" ;
+       :AlunoId "A38135" ;
+       :AlunoInstrumento "Violino" ;
+       :AlunoNasc "1997-10-2" ;
+       :AlunoNome "RUI ANDRE LEITE RIBEIRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39944 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB9 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB9" ;
+       :AlunoId "A39944" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "2000-5-25" ;
+       :AlunoNome "RUI ANTONIO PEIXOTO DE ABREU" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38148 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB4 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB4" ;
+       :AlunoId "A38148" ;
+       :AlunoInstrumento "Eufónio" ;
+       :AlunoNasc "1997-4-27" ;
+       :AlunoNome "RUI DOMINGOS GUIMARAES SALGADO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33228 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB16 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB16" ;
+       :AlunoId "A33228" ;
+       :AlunoInstrumento "Trompa" ;
+       :AlunoNasc "1996-6-20" ;
+       :AlunoNome "RUI FILIPE BARROS TAVARES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38146 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB18 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB18" ;
+       :AlunoId "A38146" ;
+       :AlunoInstrumento "Tuba" ;
+       :AlunoNasc "1999-6-8" ;
+       :AlunoNome "RUI FILIPE TORRES ALEXANDRE" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38908 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB8 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB8" ;
+       :AlunoId "A38908" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "1996-5-7" ;
+       :AlunoNome "RUI JORGE DE OLIVEIRA PEREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35371 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB9 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB9" ;
+       :AlunoId "A35371" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "1999-7-7" ;
+       :AlunoNome "RUI JORGE GUIMARAES MACHADO RODRIGUES VALENTE" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A24875 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS19 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS19" ;
+       :AlunoId "A24875" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "2005-11-23" ;
+       :AlunoNome "RUI MANUEL COUTO DA SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A37029 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB22 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB22" ;
+       :AlunoId "A37029" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "1996-12-16" ;
+       :AlunoNome "RUI MANUEL DA SILVA PEREIRA NEIVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33229 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB4 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB4" ;
+       :AlunoId "A33229" ;
+       :AlunoInstrumento "Eufónio" ;
+       :AlunoNasc "2000-1-19" ;
+       :AlunoNome "RUI MANUEL SILVA OLIVEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38119 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS5 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS5" ;
+       :AlunoId "A38119" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "2005-6-5" ;
+       :AlunoNome "RUI MIGUEL DA SILVA ABREU" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A24876 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB16 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB16" ;
+       :AlunoId "A24876" ;
+       :AlunoInstrumento "Trompa" ;
+       :AlunoNasc "2000-4-19" ;
+       :AlunoNome "RUI MIGUEL ESCUDEIRO DA COSTA AGUIAR" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A29253 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB9 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB9" ;
+       :AlunoId "A29253" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "1997-2-6" ;
+       :AlunoNome "RUI MIGUEL FERNANDES VARELA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A25868 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB9 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB9" ;
+       :AlunoId "A25868" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "2001-5-10" ;
+       :AlunoNome "RUI MIGUEL MORAIS LOPES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A28735 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS4 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS4" ;
+       :AlunoId "A28735" ;
+       :AlunoInstrumento "Eufónio" ;
+       :AlunoNasc "2002-6-6" ;
+       :AlunoNome "RUI MIGUEL NOVAIS CASTRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A27673 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB1 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB1" ;
+       :AlunoId "A27673" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "1999-8-13" ;
+       :AlunoNome "RUI MIGUEL PEREIRA OLIVEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35372 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB8 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB8" ;
+       :AlunoId "A35372" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "1997-12-7" ;
+       :AlunoNome "RUI PEDRO ANDIAS DUARTE" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33234 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB4 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB4" ;
+       :AlunoId "A33234" ;
+       :AlunoInstrumento "Eufónio" ;
+       :AlunoNasc "2000-10-15" ;
+       :AlunoNome "SANDRA MARIA OLIVEIRA CARVALHO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36765 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB9 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB9" ;
+       :AlunoId "A36765" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "1997-4-18" ;
+       :AlunoNome "SANDRA MARIA TELES FEIO ALMEIDA FAZENDEIRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38173 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB11 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB11" ;
+       :AlunoId "A38173" ;
+       :AlunoInstrumento "Orgão" ;
+       :AlunoNasc "1997-12-1" ;
+       :AlunoNome "SEBASTIAO MONTEIRO SIMOES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38183 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB10 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB10" ;
+       :AlunoId "A38183" ;
+       :AlunoInstrumento "Oboé" ;
+       :AlunoNasc "1998-1-22" ;
+       :AlunoNome "SERGIO BRANCO AMORIM" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33235 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB14 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB14" ;
+       :AlunoId "A33235" ;
+       :AlunoInstrumento "Saxofone" ;
+       :AlunoNasc "1997-10-25" ;
+       :AlunoNome "SERGIO DE ALMEIDA PAIVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39343 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS19 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS19" ;
+       :AlunoId "A39343" ;
+       :AlunoInstrumento "Violoncelo" ;
+       :AlunoNasc "2002-10-23" ;
+       :AlunoNome "SERGIO FELICIANO FERREIRA JACOME" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39410 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB12 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB12" ;
+       :AlunoId "A39410" ;
+       :AlunoInstrumento "Percussão" ;
+       :AlunoNasc "1996-5-26" ;
+       :AlunoNome "SERGIO FILIPE PEREIRA DA FELICIDADE" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35374 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB2 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB2" ;
+       :AlunoId "A35374" ;
+       :AlunoInstrumento "Contrabaixo" ;
+       :AlunoNasc "2000-9-21" ;
+       :AlunoNome "SERGIO MANUEL PEREIRA BARREIRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A24885 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB9 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB9" ;
+       :AlunoId "A24885" ;
+       :AlunoInstrumento "Harpa" ;
+       :AlunoNasc "1999-3-2" ;
+       :AlunoNome "SERGIO MANUEL RUIVO CARDOSO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38177 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB4 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB4" ;
+       :AlunoId "A38177" ;
+       :AlunoInstrumento "Eufónio" ;
+       :AlunoNasc "1999-8-21" ;
+       :AlunoNome "SERGIO NUNO CLARO GOMES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35375 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS20 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS20" ;
+       :AlunoId "A35375" ;
+       :AlunoInstrumento "Violino" ;
+       :AlunoNasc "2005-5-25" ;
+       :AlunoNome "SERGIO RICARDO TEIXEIRA ANDIAS MIRANDA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38181 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS13 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS13" ;
+       :AlunoId "A38181" ;
+       :AlunoInstrumento "Piano" ;
+       :AlunoNasc "2003-6-21" ;
+       :AlunoNome "SOFIA DA CONCEICAO ALVES MENDES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33238 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS18 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS18" ;
+       :AlunoId "A33238" ;
+       :AlunoInstrumento "Tuba" ;
+       :AlunoNasc "2004-7-20" ;
+       :AlunoNome "SONIA ANDREA GARRIDO DE SA EIRAS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35376 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB21 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB21" ;
+       :AlunoId "A35376" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "1997-3-23" ;
+       :AlunoNome "TELMA DE FATIMA PIRES DE SA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38131 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS21 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS21" ;
+       :AlunoId "A38131" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "2004-4-15" ;
+       :AlunoNome "TIAGO DANIEL CERQUEIRA BOTELHO DA SILVA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33240 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB21 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB21" ;
+       :AlunoId "A33240" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "1997-4-9" ;
+       :AlunoNome "TIAGO JORGE GOMES DA SILVA ARAUJO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38144 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB6 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB6" ;
+       :AlunoId "A38144" ;
+       :AlunoInstrumento "Flauta" ;
+       :AlunoNasc "1999-12-24" ;
+       :AlunoNome "TIAGO LEANDRO DE CASTRO RIBEIRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38145 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS12 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS12" ;
+       :AlunoId "A38145" ;
+       :AlunoInstrumento "Percussão" ;
+       :AlunoNasc "2003-12-8" ;
+       :AlunoNome "TIAGO MIGUEL SOARES FERNANDES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A29254 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS8 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS8" ;
+       :AlunoId "A29254" ;
+       :AlunoInstrumento "Guitarra" ;
+       :AlunoNasc "2002-5-3" ;
+       :AlunoNome "TITO JOSE FERREIRA DE SOUSA LOPES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35418 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB22 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB22" ;
+       :AlunoId "A35418" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "1997-7-11" ;
+       :AlunoNome "VALTER MIGUEL OLIVEIRA VILAR" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38127 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS5 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS5" ;
+       :AlunoId "A38127" ;
+       :AlunoInstrumento "Fagote" ;
+       :AlunoNasc "2003-11-21" ;
+       :AlunoNome "VANESSA ALZIRA ABRUNHOSA CARNEIRO DE CASTRO FIDALGO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33282 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB17 ;
+       :AlunoAno "2"^^xsd:int ;
+       :AlunoCurso "CB17" ;
+       :AlunoId "A33282" ;
+       :AlunoInstrumento "Trompete" ;
+       :AlunoNasc "2000-5-4" ;
+       :AlunoNome "VIRGILIO ABRANTES VINHA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A30266 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS10 ;
+       :AlunoAno "7"^^xsd:int ;
+       :AlunoCurso "CS10" ;
+       :AlunoId "A30266" ;
+       :AlunoInstrumento "Oboé" ;
+       :AlunoNasc "2002-2-7" ;
+       :AlunoNome "VITOR CARLOS TEIXEIRA PIMENTEL" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35377 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB7 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB7" ;
+       :AlunoId "A35377" ;
+       :AlunoInstrumento "Fliscorne" ;
+       :AlunoNasc "1996-3-11" ;
+       :AlunoNome "VITOR DA COSTA PINHEIRO" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38192 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS1 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS1" ;
+       :AlunoId "A38192" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "2005-12-4" ;
+       :AlunoNome "VITOR HUGO DA SILVA NOGUEIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A35378 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB16 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB16" ;
+       :AlunoId "A35378" ;
+       :AlunoInstrumento "Trompa" ;
+       :AlunoNasc "1998-3-23" ;
+       :AlunoNome "VITOR HUGO PEREIRA DA SILVA MOREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A38182 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB22 ;
+       :AlunoAno "4"^^xsd:int ;
+       :AlunoCurso "CB22" ;
+       :AlunoId "A38182" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "1998-5-2" ;
+       :AlunoNome "VITOR MANUEL ALVES DA ROCHA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A36773 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS22 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS22" ;
+       :AlunoId "A36773" ;
+       :AlunoInstrumento "Bandolim" ;
+       :AlunoNasc "2004-6-28" ;
+       :AlunoNome "VITOR MANUEL CARVALHO RODRIGUES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A39671 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB13 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB13" ;
+       :AlunoId "A39671" ;
+       :AlunoInstrumento "Piano" ;
+       :AlunoNasc "1999-8-9" ;
+       :AlunoNome "VITOR MANUEL PINTO LOPES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A27648 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB4 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB4" ;
+       :AlunoId "A27648" ;
+       :AlunoInstrumento "Eufónio" ;
+       :AlunoNasc "1996-12-24" ;
+       :AlunoNome "NUNO RAMOS MATOS" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A27620 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB21 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB21" ;
+       :AlunoId "A27620" ;
+       :AlunoInstrumento "Viola de Arco" ;
+       :AlunoNasc "1997-6-6" ;
+       :AlunoNome "JOAO ANDRE FARIA LOPES" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A33199 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB10 ;
+       :AlunoAno "1"^^xsd:int ;
+       :AlunoCurso "CB10" ;
+       :AlunoId "A33199" ;
+       :AlunoInstrumento "Oboé" ;
+       :AlunoNasc "1999-3-16" ;
+       :AlunoNome "NUNO FILIPE MENDES PEREIRA" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:AE-939 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS1 ;
+       :AlunoAno "6"^^xsd:int ;
+       :AlunoCurso "CS1" ;
+       :AlunoId "AE-939" ;
+       :AlunoInstrumento "Clarinete" ;
+       :AlunoNasc "2003-6-27" ;
+       :AlunoNome "Jorge Gonzalez y Hurtado de Mendoza" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:AE-922 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CS6 ;
+       :AlunoAno "8"^^xsd:int ;
+       :AlunoCurso "CS6" ;
+       :AlunoId "AE-922" ;
+       :AlunoInstrumento "Flauta" ;
+       :AlunoNasc "2005-9-17" ;
+       :AlunoNome "Brais Hernandez Facal" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:AE-907 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB7 ;
+       :AlunoAno "3"^^xsd:int ;
+       :AlunoCurso "CB7" ;
+       :AlunoId "AE-907" ;
+       :AlunoInstrumento "Fliscorne" ;
+       :AlunoNasc "2000-4-20" ;
+       :AlunoNome "Oscar Lopez Garcia" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#A1510
+:A4140 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :estuda :CB14 ;
+       :AlunoAno "5"^^xsd:int ;
+       :AlunoCurso "CB14" ;
+       :AlunoId "A4140" ;
+       :AlunoInstrumento "Saxofone" ;
+       :AlunoNasc "1967-02-01" ;
+       :AlunoNome "José Carlos Ramalho" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB1 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I1 ;
+     :CursoDesignacao "Curso Básico de Clarinete" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB1" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS23 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I1 ;
+     :CursoDesignacao "Curso Supletivo de Clarinete" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS23" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB2 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I2 ;
+     :CursoDesignacao "Curso Básico de Contrabaixo" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB2" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS24 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I2 ;
+     :CursoDesignacao "Curso Supletivo de Contrabaixo" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS24" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB3 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I3 ;
+     :CursoDesignacao "Curso Básico de Corne Inglês" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB3" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS25 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I3 ;
+     :CursoDesignacao "Curso Supletivo de Corne Inglês" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS25" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB4 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I4 ;
+     :CursoDesignacao "Curso Básico de Eufónio" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB4" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS26 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I4 ;
+     :CursoDesignacao "Curso Supletivo de Eufónio" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS26" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB5 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I5 ;
+     :CursoDesignacao "Curso Básico de Fagote" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB5" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS27 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I5 ;
+     :CursoDesignacao "Curso Supletivo de Fagote" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS27" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB6 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I6 ;
+     :CursoDesignacao "Curso Básico de Flauta" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB6" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS28 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I6 ;
+     :CursoDesignacao "Curso Supletivo de Flauta" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS28" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB7 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I7 ;
+     :CursoDesignacao "Curso Básico de Fliscorne" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB7" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS29 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I7 ;
+     :CursoDesignacao "Curso Supletivo de Fliscorne" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS29" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB8 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I8 ;
+     :CursoDesignacao "Curso Básico de Guitarra" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB8" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS30 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I8 ;
+     :CursoDesignacao "Curso Supletivo de Guitarra" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS30" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB9 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I9 ;
+     :CursoDesignacao "Curso Básico de Harpa" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB9" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS31 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I9 ;
+     :CursoDesignacao "Curso Supletivo de Harpa" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS31" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB10 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I10 ;
+     :CursoDesignacao "Curso Básico de Oboé" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB10" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS32 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I10 ;
+     :CursoDesignacao "Curso Supletivo de Oboé" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS32" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB11 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I11 ;
+     :CursoDesignacao "Curso Básico de Orgão" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB11" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS33 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I11 ;
+     :CursoDesignacao "Curso Supletivo de Orgão" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS33" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB12 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I12 ;
+     :CursoDesignacao "Curso Básico de Percussão" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB12" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS34 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I12 ;
+     :CursoDesignacao "Curso Supletivo de Percussão" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS34" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB13 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I13 ;
+     :CursoDesignacao "Curso Básico de Piano" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB13" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS35 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I13 ;
+     :CursoDesignacao "Curso Supletivo de Piano" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS35" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB14 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I14 ;
+     :CursoDesignacao "Curso Básico de Saxofone" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB14" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS36 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I14 ;
+     :CursoDesignacao "Curso Supletivo de Saxofone" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS36" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB15 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I15 ;
+     :CursoDesignacao "Curso Básico de Trombone" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB15" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS37 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I15 ;
+     :CursoDesignacao "Curso Supletivo de Trombone" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS37" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB16 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I16 ;
+     :CursoDesignacao "Curso Básico de Trompa" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB16" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS38 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I16 ;
+     :CursoDesignacao "Curso Supletivo de Trompa" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS38" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB17 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I17 ;
+     :CursoDesignacao "Curso Básico de Trompete" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB17" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS39 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I17 ;
+     :CursoDesignacao "Curso Supletivo de Trompete" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS39" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB18 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I18 ;
+     :CursoDesignacao "Curso Básico de Tuba" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB18" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS40 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I18 ;
+     :CursoDesignacao "Curso Supletivo de Tuba" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS40" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB19 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I19 ;
+     :CursoDesignacao "Curso Básico de Violoncelo" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB19" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS41 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I19 ;
+     :CursoDesignacao "Curso Supletivo de Violoncelo" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS41" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB20 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I20 ;
+     :CursoDesignacao "Curso Básico de Violino" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB20" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS42 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I20 ;
+     :CursoDesignacao "Curso Supletivo de Violino" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS42" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB21 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I21 ;
+     :CursoDesignacao "Curso Básico de Viola de Arco" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB21" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS43 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I21 ;
+     :CursoDesignacao "Curso Supletivo de Viola de Arco" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS43" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CB22 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I22 ;
+     :CursoDesignacao "Curso Básico de Bandolim" ;
+     :CursoDuracao "5"^^xsd:int ;
+     :CursoId "CB22" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#CB8
+:CS44 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :instrumentoEnsinado :I22 ;
+     :CursoDesignacao "Curso Supletivo de Bandolim" ;
+     :CursoDuracao "3"^^xsd:int ;
+     :CursoId "CS44" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I1 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I1" ;
+    :InstrumentoText "Clarinete" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I2 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I2" ;
+    :InstrumentoText "Contrabaixo" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I3 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I3" ;
+    :InstrumentoText "Corne Inglês" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I4 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I4" ;
+    :InstrumentoText "Eufónio" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I5 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I5" ;
+    :InstrumentoText "Fagote" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I6 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I6" ;
+    :InstrumentoText "Flauta" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I7 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I7" ;
+    :InstrumentoText "Fliscorne" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I8 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I8" ;
+    :InstrumentoText "Guitarra" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I9 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I9" ;
+    :InstrumentoText "Harpa" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I10 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I10" ;
+    :InstrumentoText "Oboé" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I11 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I11" ;
+    :InstrumentoText "Orgão" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I12 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I12" ;
+    :InstrumentoText "Percussão" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I13 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I13" ;
+    :InstrumentoText "Piano" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I14 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I14" ;
+    :InstrumentoText "Saxofone" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I15 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I15" ;
+    :InstrumentoText "Trombone" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I16 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I16" ;
+    :InstrumentoText "Trompa" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I17 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I17" ;
+    :InstrumentoText "Trompete" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I18 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I18" ;
+    :InstrumentoText "Tuba" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I19 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I19" ;
+    :InstrumentoText "Violoncelo" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I20 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I20" ;
+    :InstrumentoText "Violino" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I21 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I21" ;
+    :InstrumentoText "Viola de Arco" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/untitled-ontology-7#I8
+:I22 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :InstrumentoId "I22" ;
+    :InstrumentoText "Bandolim" .
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

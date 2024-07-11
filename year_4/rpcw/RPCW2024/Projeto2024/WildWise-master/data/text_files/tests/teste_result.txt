@@ -1,0 +1,6 @@
+['batata\n', 'arroz\n', 'bife\n', 'Massa\n']
+batata
+arroz
+bife
+Massa
+

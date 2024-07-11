@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf8"/>
+        <title>Tabela Periódica: Elementos</title>
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/w3.css') }}"/>
+    </header>
+    <body>
+        <div class="w3-card-4">
+            <header class="w3-container w3-purple">
+                <h1>Tabela Periódica: Elementos</h1>
+            </header>
+
+            <div class="w3-container">
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Número</th>
+                        <th>Nome</th>
+                        <th>Símbolo</th>
+                        <th>Grupo</th>
+                    </tr>
+                    {% for entry in data %}
+                    <tr>
+                        <td><a href="{{url_for('elemento', id=entry.n.value)}}">{{entry.n.value}}</a></td>
+                        <td>{{entry.nome.value}}</td>
+                        <td>{{entry.simb.value}}</td>
+                        <td><a href="{{url_for('grupo', id=entry.grupo.value)}}">{{entry.grupo_nome.value}}</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+            <footer class="w3-container w3-purple">
+                <h5>Gerado por RPCW2024</h5>
+            </footer>
+        </div>
+    </body>
+</html>

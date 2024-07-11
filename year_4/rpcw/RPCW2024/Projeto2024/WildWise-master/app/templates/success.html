@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf8"/>
+        <title>WildWise</title>
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/w3.css') }}"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Junge">
+
+        <style>
+            .w3-theme-c1 {color:#fff !important;background-color:#496528 !important}
+            .w3-theme-c2 {color:#fff !important;background-color:#64942D !important}
+            .w3-theme-c3 {color:#fff !important;background-color:#2e3522 !important}
+
+            body, h1, h2, h3, h4, h5, h6 {
+            font-family: Junge;
+}
+        </style>
+    </header>
+    <body class="w3-theme-c3">
+        <div class="w3-card-4">
+            <header class="w3-display-container w3-theme-c1 w3-padding">
+                <h1 class="w3-margin-left">
+                    <a href="/" style="text-decoration: none;">
+                        <img src="../static/favicon.png" style="width:10vh;height:10vh;">
+                    </a>
+                   <b>WildWise</b>
+                </h1>
+                    <div class="w3-display-right w3-margin-right">
+                        <a href="/" class="w3-white w3-button w3-round-xlarge w3-hover-shadow">
+                            Início
+                        </a>
+                        <a href="/aumentar" class="w3-white w3-button w3-round-xlarge w3-hover-shadow">
+                            Contribuir
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <h2 class="w3-container w3-theme-c3">O animal {{data.name}} foi adicionado!</h2>
+
+            <footer class="w3-container w3-theme-c3">
+                <h5>Gerado por RPCW2024 em {{data.data}}</h5>
+            </footer>
+        </div>
+    </body>
+</html>

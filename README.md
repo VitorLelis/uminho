@@ -30,6 +30,10 @@ Disclaimer: Most of the descriptions of projects and exercises were written in P
 ### Fourth Year
 
 + [CPar](https://github.com/VitorLelis/uminho/tree/main/year_4/cpar) - Computação Paralela
++ [EG](https://github.com/VitorLelis/uminho/tree/main/year_4/eg) - Engenharia Gramatical
++ [PCF](https://github.com/VitorLelis/uminho/tree/main/year_4/pcf) - Programação Ciber-Física
++ [RPCW](https://github.com/VitorLelis/uminho/tree/main/year_4/rpcw) - Representação e Processamento de Conhecimento na Web
++ [SPLN](https://github.com/VitorLelis/uminho/tree/main/year_4/spln) - Scripting no Processamento de Linguagem Natural
 
 <sub>2019 - Current</sub>
 

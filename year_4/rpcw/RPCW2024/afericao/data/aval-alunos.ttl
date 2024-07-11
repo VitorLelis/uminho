@@ -1,0 +1,181 @@
+@prefix : <http://www.semanticweb.org/lelis_vitor/ontologies/2024/a/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/lelis_vitor/ontologies/2024/a/> .
+
+<http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#entrega
+:entrega rdf:type owl:ObjectProperty ;
+         owl:inverseOf :entreguePor ;
+         rdfs:domain :Aluno ;
+         rdfs:range :TPC .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#entreguePor
+:entreguePor rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#realiza
+:realiza rdf:type owl:ObjectProperty ;
+         owl:inverseOf :realizadoPor ;
+         rdfs:domain :Aluno ;
+         rdfs:range :Exame .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#realizadoPor
+:realizadoPor rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#curso
+:curso rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Aluno ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#idAluno
+:idAluno rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Aluno ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#idExame
+:idExame rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Exame ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#idTPC
+:idTPC rdf:type owl:DatatypeProperty ;
+       rdfs:domain :TPC ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#nome
+:nome rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Aluno ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#notaExame
+:notaExame rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Exame ;
+           rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#notaTPC
+:notaTPC rdf:type owl:DatatypeProperty ;
+         rdfs:domain :TPC ;
+         rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#numeroTPC
+:numeroTPC rdf:type owl:DatatypeProperty ;
+           rdfs:domain :TPC ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#projeto
+:projeto rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Aluno ;
+         rdfs:range xsd:decimal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#Aluno
+:Aluno rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#Especial
+:Especial rdf:type owl:Class ;
+          rdfs:subClassOf :Exame .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#Exame
+:Exame rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#Normal
+:Normal rdf:type owl:Class ;
+        rdfs:subClassOf :Exame .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#Recurso
+:Recurso rdf:type owl:Class ;
+         rdfs:subClassOf :Exame .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#TPC
+:TPC rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#A91509
+:A91509 rdf:type owl:NamedIndividual ,
+                 :Aluno ;
+        :entrega :tpc2-A91509 ,
+                 :tpc7-A91509 ;
+        :realiza :especial-A91509 ,
+                 :normal-A91509 ,
+                 :recurso-A91509 ;
+        :curso "MML" ;
+        :idAluno "A91509" ;
+        :nome "Momtahana Caldinhas" ;
+        :projeto 14.0 .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#especial-A91509
+:especial-A91509 rdf:type owl:NamedIndividual ,
+                          :Especial ;
+                 :idExame "especial-A91509" ;
+                 :notaExame 19 .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#normal-A91509
+:normal-A91509 rdf:type owl:NamedIndividual ,
+                        :Normal ;
+               :idExame "normal-A91509" ;
+               :notaExame 3 .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#recurso-A91509
+:recurso-A91509 rdf:type owl:NamedIndividual ,
+                         :Recurso ;
+                :idExame "recurso-A91509" ;
+                :notaExame 16 .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#tpc2-A91509
+:tpc2-A91509 rdf:type owl:NamedIndividual ,
+                      :TPC ;
+             :idTPC "tpc2-A91509" ;
+             :notaTPC 0.9 ;
+             :numeroTPC "tpc2" .
+
+
+###  http://www.semanticweb.org/lelis_vitor/ontologies/2024/teste_modelo#tpc7-A91509
+:tpc7-A91509 rdf:type owl:NamedIndividual ,
+                      :TPC ;
+             :idTPC "tpc7-A91509" ;
+             :notaTPC 0.27 ;
+             :numeroTPC "tpc7" .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

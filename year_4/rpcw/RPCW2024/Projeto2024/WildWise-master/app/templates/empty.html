@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf8"/>
+        <title>WildWise</title>
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/w3.css') }}"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Junge">
+
+        <style>
+            .w3-theme-c3 {color:#fff !important;background-color:#2e3522 !important}
+
+            body, h1, h2, h3, h4, h5, h6 {
+            font-family: Junge;
+}
+        </style>
+    </header>
+    <body class="w3-theme-c3">
+        <footer class="w3-container">
+            <h5>Gerado por RPCW2024 em {{data.data}}</h5>
+        </footer>
+    </body>
+</html>

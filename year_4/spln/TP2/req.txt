@@ -1,0 +1,5 @@
+gensim
+mysql
+python-dotenv
+scipy==1.12
+nltk
