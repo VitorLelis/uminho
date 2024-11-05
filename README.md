@@ -1,6 +1,6 @@
 # University Projects
 
-This repository will contains my favorite projects and exercises made during my Graduation and Masters degrees in Software Engineering at University of Minho. 
+This repository will contains my favorite projects and exercises made during my Graduation and Masters degrees in Software Engineering at [University of Minho](https://www.uminho.pt/EN). 
 
 Disclaimer: Most of the descriptions of projects and exercises were written in Portuguese.
 
