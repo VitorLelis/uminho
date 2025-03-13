@@ -35,6 +35,9 @@ Disclaimer: Most of the descriptions of projects and exercises were written in P
 + [RPCW](https://github.com/VitorLelis/uminho/tree/main/year_4/rpcw) - Representação e Processamento de Conhecimento na Web
 + [SPLN](https://github.com/VitorLelis/uminho/tree/main/year_4/spln) - Scripting no Processamento de Linguagem Natural
 
+### Fifth year
++ [RPD](https://github.com/VitorLelis/uminho/tree/main/year_5/rpd) - Apresentação Relatório Pré-Dissertação
+
 <sub>2019 - Current</sub>
 
 <img src="https://www.eng.uminho.pt/SiteAssets/Logo.PNG" alt="University of Minho">
