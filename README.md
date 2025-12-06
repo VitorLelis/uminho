@@ -37,7 +37,8 @@ Disclaimer: Most of the descriptions of projects and exercises were written in P
 
 ### Fifth year
 + [RPD](https://github.com/VitorLelis/uminho/tree/main/year_5/rpd) - Apresentação Relatório Pré-Dissertação
++ [Defesa](https://github.com/VitorLelis/uminho/tree/main/year_5/rpd) - Defesa da Dissertação
 
-<sub>2019 - Current</sub>
+<sub>2019 - 2025</sub>
 
 <img src="https://www.eng.uminho.pt/SiteAssets/Logo.PNG" alt="University of Minho">

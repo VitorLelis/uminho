@@ -1,0 +1,362 @@
+\begin{frame}[plain]
+    \begin{bee}[Summary]
+        \begin{enumerate}[1.]
+            \item Introduction
+            \item Concepts
+            \item Operations
+            \item Web Platform
+            \item Conclusion and Future work
+        \end{enumerate}
+    \end{bee} 
+\end{frame}
+
+\begin{frame}[plain]
+    \begingroup
+        \fontfamily{qag}\selectfont
+        \Huge\color{black}\textbf{1. Introduction}\\[0.6em]
+    \endgroup
+\end{frame}
+
+\begin{frame}{1. Introduction - Context}
+    \begin{bee}
+        \begin{enumerate}[$\bullet$]
+            \item In knowledge representation, \textbf{ontologies} provide a formal structure for concepts and relationships in a domain.
+            \item Essential in AI, data integration, and the \textbf{Semantic Web} for consistent data linking.
+            \item Growing data makes maintenance complex and ontologies can quickly become outdated or inconsistent.
+            \item Expansion relies on \textbf{reasoners}, which can be computationally expensive, especially for large-scale or real-time updates.
+    \end{enumerate}
+    \end{bee}
+\end{frame}
+
+\begin{frame}{1. Introduction - Main Aims}
+    \begin{bee}
+        \begin{enumerate}[$\bullet$]
+            \item \textbf{Goal:} Develop an efficient software for ontology expansion using \textbf{SPARQL CONSTRUCT} queries.
+            \item \textbf{Phase 1:} Map ontological axioms to SPARQL queries.
+            \item \textbf{Phase 2:} Web app applies the queries, updates ontology dynamically, and shows results in real time.
+            \item \textbf{Outcome:}  
+                \begin{enumerate}[$\bullet$]  
+                    \item Automates reasoning, no manual queries needed.  
+                    \item Reduces reliance on external reasoners.  
+                    \item Enables fast, scalable knowledge updates.  
+                    \item Supports evolving information systems.  
+                \end{enumerate}
+        \end{enumerate}
+    \end{bee}
+\end{frame}
+
+\begin{frame}[plain]
+    \begingroup
+        \fontfamily{qag}\selectfont
+        \Huge\color{black}\textbf{2. Concepts}\\[0.6em]
+    \endgroup
+\end{frame}
+
+\begin{frame}{2. Concepts - Ontologies}
+    \begin{tikzpicture}[remember picture, overlay]
+        \node at ([xshift=4.5cm,yshift=-5cm]current page.north west) {\includegraphics[width=7cm]{2-content/ontology-structure.png}};
+    \end{tikzpicture}
+
+    \begin{columns}
+        \begin{column}{5cm}
+        \end{column}
+        \begin{column}{5cm}
+            \begin{bee}[]
+                Ontologies structure knowledge by defining concepts, relationships, and rules, enabling data standardization and human-machine understanding. They consist of classes, properties, and individuals.
+            \end{bee}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{2. Concepts - RDF and OWL}
+    \begin{bee}
+        \begin{enumerate}[$\bullet$]
+    \item \textbf{RDF:} Standard model for representing web data using triples \texttt{<subject, predicate, object>}.
+    \item \textbf{OWL:} Built on RDF, provides more expressiveness and supports reasoning with ontologies.
+    \item Features:
+    \begin{enumerate}[$\bullet$]
+        \item \textbf{Hierarchy:} Supports subclass relationships for structured organization.
+        \item \textbf{Property Characteristics:} Transitivity, symmetry, functionality, and inverse properties.
+        \item \textbf{Axioms:} Enable logical reasoning and inference of new knowledge.
+    \end{enumerate}
+\end{enumerate}
+    \end{bee}
+\end{frame}
+
+\begin{frame}{2. Concepts - RDF and OWL}
+    \begin{bee}[]
+        \texttt{<Jim> <hasAge> "26"} \\ 
+        \texttt{<Person> rdf:type rdfs:Class.} \\
+        \texttt{<Employee> rdfs:subClassOf <Person>.}\\
+        \texttt{<employs> owl:inverseOf <worksFor> .} \\
+    \end{bee}    
+\end{frame}
+
+\begin{frame}{2. Concepts - SPARQL}
+    \begin{bee}
+        \begin{enumerate}[$\bullet$]
+        \item Query language and protocol for RDF data to extract, filter, and construct data from RDF graphs.  
+        \item SPARQL Components:
+        \begin{enumerate}[$\bullet$]
+           \item \textbf{SELECT:} Specifies the variables to retrieve. It is the core component for data extraction.
+            \item \textbf{CONSTRUCT:} Generates new triples based on query results, enabling data transformation.  
+            \item \textbf{INSERT/DELETE:} Adds or removes triples from the RDF dataset.
+            \item \textbf{WHERE:} Defines the triple pattern to match in the RDF graph.  
+        \end{enumerate}
+    \end{enumerate}
+    \end{bee}
+\end{frame}
+
+\begin{frame}{2. Concepts - SPARQL}
+    \begin{bee}
+        \texttt{PREFIX ex: <http://example.org/> \\
+SELECT ?manager \\
+WHERE \{\\
+?manager ex:manages/ex:hasAge ?age . \\
+FILTER (?age > 40)\\
+\}}
+    \end{bee}
+\end{frame}
+
+\begin{frame}{2. Concepts - SPARQL}
+    \begin{bee}
+        \texttt{PREFIX ex: <http://example.org/> \\
+CONSTRUCT \{\\
+?person ex:aboveForty "true" . \\
+\} WHERE \{\\
+?person ex:hasAge ?age . \\
+FILTER (?age > 40)
+\}}
+    \end{bee}
+
+    \begin{bee}
+        \texttt{INSERT DATA \{ \\ <subj> <prop> <obj> . \\ \}}
+    \end{bee}
+\end{frame}
+
+\begin{frame}[plain]
+    \begingroup
+        \fontfamily{qag}\selectfont
+        \Huge\color{black}\textbf{3. Operations}\\[0.6em]
+    \endgroup
+\end{frame}
+
+\begin{frame}{3. Operations - Case study}
+        \begin{tikzpicture}[remember picture, overlay]
+        \node at ([xshift=4.5cm,yshift=-5cm]current page.north west) {\includegraphics[width=5cm]{2-content/targaryen.jpg}};
+    \end{tikzpicture}
+
+    \begin{columns}
+        \begin{column}{5cm}
+        \end{column}
+        \begin{column}{5cm}
+            \begin{bee}[]
+                Simplified ontology inspired by House Targaryen from \textit{Game of Thrones}. Includes relationships for family ties, alliances, and ownership.
+            \end{bee}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{3. Operations - List}
+    \begin{bee}
+        \begin{enumerate}[1.]
+            \item Instance Checking
+            \item Hierarchy 
+            \item Property Inference
+            \item Transitive Property Reasoning
+            \item Symmetric Property Reasoning
+            \item Restrictions
+            \item Equivalence Reasoning
+            \item Property Chain
+            \item Consistency Checking
+        \end{enumerate}
+    \end{bee}
+\end{frame}
+
+\begin{frame}{3. Operations - Selected}
+    \begin{bee}
+        \begin{enumerate}[1.]
+            \item Symmetric Property Reasoning
+            \item Property Chain
+        \end{enumerate}
+    \end{bee}
+\end{frame}
+
+\begin{frame}{3. Operations - Symmetric Property Reasoning}
+    \begin{bee}
+        $P \subseteq \texttt{owl:SymmetricProperty} \Rightarrow (P(x, y) \rightarrow P(y, x))$
+    \end{bee}
+    \begin{bee}
+        \texttt{CONSTRUCT \{\\
+?subj ?prop ?target .\\
+\}
+WHERE \{\\
+?prop a owl:ObjectProperty, owl:SymmetricProperty .\\
+?target ?prop ?subj .\\
+FILTER NOT EXISTS \{ ?subj ?prop ?target .\}\\
+\}
+        }
+    \end{bee}
+\end{frame}
+
+\begin{frame}{3. Operations - Symmetric Property Reasoning}
+    \begin{table}[H]
+\centering
+\begin{tabular}{|l|}
+\hline
+\textbf{Existing Triples:}\\
+\texttt{targaryen:isAllyOf a owl:ObjectProperty} \\
+\texttt{targaryen:isAllyOf a owl:SymmetricProperty} \\
+\texttt{targaryen:houseBaratheon targaryen:isAllyOf targaryen:houseTargaryen} \\
+\hline
+\textbf{Result Triples:}\\
+\texttt{targaryen:houseTargaryen targaryen:isAllyOf targaryen:houseBaratheon} \\
+\hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{3. Operations - Property Chain}
+    \begin{bee}
+        $R_1 \circ R_2 \rightarrow R_3 \Rightarrow (R_1(x, y) \land R_2(y, z) \rightarrow R_3(x, z))$
+    \end{bee}
+    \begin{bee}
+        \texttt{CONSTRUCT \{\\
+?x <{superProperty}> ?z .\\
+\} WHERE \{ \\
+?x <{propertyChain}> ?z .\\
+FILTER NOT EXISTS \{\\
+?p a owl:IrreflexiveProperty .\\
+FILTER(?p = <{superProperty}> \&\& ?x = ?z)\\\}\}
+}
+\end{bee}
+\end{frame}
+
+\begin{frame}{3. Operations - Property Chain}
+    \begin{bee}
+        \texttt{SELECT DISTINCT ?superProperty \\
+        (GROUP\_CONCAT(CONCAT("<", STR(?subProperty), ">"); SEPARATOR="/") AS ?propertyChain)\\}
+\end{bee}
+\end{frame}
+
+\begin{frame}{3. Operations - Property Chain}
+    \begin{bee}
+        \texttt{WHERE \{\\
+?superProperty owl:propertyChainAxiom ?chainList .\\
+?chainList rdf:rest*/rdf:first ?subProperty .\\
+{?subProperty a owl:ObjectProperty .}\\
+UNION \{\\
+?listNode rdf:first ?subProperty .\\
+?listNode rdf:rest rdf:nil .\\
+?subProperty a owl:DatatypeProperty .\\
+\}}
+GROUP BY ?superProperty ?chainList
+\end{bee}
+\end{frame}
+
+\begin{frame}{3. Operations - Property Chain}
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|}
+\hline
+\textbf{Existing Triples:}\\
+\texttt{targaryen:hasSibling owl:propertyChainAxiom <Chain> } \\
+\texttt{<Chain> rdf:first targaryen:hasParent} \\
+\texttt{<Chain> rdf:rest*/rdf:first targaryen:hasChild} \\
+\texttt{targaryen:Daenerys targaryen:hasParent targaryen:AerysII} \\
+\texttt{targaryen:AerysII targaryen:hasChild targaryen:Rhaegar} \\
+\hline
+\textbf{Result Triples:}\\
+\texttt{targaryen:Daenerys targaryen:hasSibling targaryen:Rhaegar} \\
+\hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}[plain]
+    \begingroup
+        \fontfamily{qag}\selectfont
+        \Huge\color{black}\textbf{4. Web Platform}\\[0.6em]
+    \endgroup
+\end{frame}
+
+\begin{frame}{4. Web Platform - Context}
+    \begin{bee}
+        \begin{enumerate}[$\bullet$]
+    \item Built with \texttt{Next.js} and connects to a local GraphDB instance via its REST API.
+    \item Design goals: simplicity and clarity, inspired by GraphDB Workbench.
+    \item Includes four pages:
+    \begin{itemize}
+        \item \textbf{Home}: overview and query showcase.
+        \item \textbf{Inspect}: ontology exploration (classes, properties, individuals, IRI lookup).
+        \item \textbf{Expand}: inference through \texttt{CONSTRUCT} queries with optional \texttt{INSERT} of derived triples.
+        \item \textbf{Check}: consistency-checking queries for detecting logical issues.
+    \end{itemize}
+\end{enumerate}
+    \end{bee}
+\end{frame}
+
+\begin{frame}{4. Web Platform - Home}
+    \begin{figure}
+        \centering
+        \includegraphics[width=12cm]{2-content/homepage.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{4. Web Platform - Inspect}
+    \begin{figure}
+        \centering
+        \includegraphics[width=12cm]{2-content/inspectpage.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{4. Web Platform - Expand}
+    \begin{figure}
+        \centering
+        \includegraphics[width=12cm]{2-content/expandpage.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{4. Web Platform - Expand}
+    \begin{figure}
+        \centering
+        \includegraphics[width=12cm]{2-content/rangeresult.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{4. Web Platform - Check}
+    \begin{figure}
+        \centering
+        \includegraphics[width=12cm]{2-content/checkpage.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[plain]
+    \begingroup
+        \fontfamily{qag}\selectfont
+        \Huge\color{black}\textbf{5. Conclusion and Future work}\\[0.6em]
+    \endgroup
+\end{frame}
+
+\begin{frame}{5. Conclusion and Future work}
+    \begin{bee}
+        \begin{enumerate}[$\bullet$]
+    \item Explored SPARQL as an alternative to traditional ontology reasoners.
+    \item Developed SPARQL \texttt{CONSTRUCT} queries to reproduce core reasoning tasks.
+    \item Built a web platform to run these queries, visualize results, and expand the ontology.
+    \item Limitations: SPARQL’s expressiveness and reliance on manual GraphDB setup.
+    \item Future work: increase query coverage, enhance platform features, improve portability, and benchmark performance.
+\end{enumerate}
+
+    \end{bee}
+\end{frame}
+
+\begin{frame}[plain]
+    \begingroup
+        \fontfamily{qag}\selectfont
+        \Huge\color{black}\textbf{Thank you for your attention!}\\[0.6em]
+    \endgroup
+\end{frame}
+
+\begin{frame}[plain]
+\end{frame}
